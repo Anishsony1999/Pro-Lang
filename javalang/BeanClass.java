@@ -55,4 +55,8 @@ public class BeanClass {
 
     }
 
+
+    // super()
+    // super(parameters) is used to call the parent class constructor.
+
 }

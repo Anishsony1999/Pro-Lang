@@ -28,6 +28,14 @@ package javalang;
 
 public class Threadd {
     public static void main(String[] args) {
+
+
+        for (int i = 0; i < 11; i++) {
+            System.out.println(i);
+        }
+
+        System.out.println("loop end");
+
         
         MyThread t = new MyThread(); // Thread class
         t.start();
