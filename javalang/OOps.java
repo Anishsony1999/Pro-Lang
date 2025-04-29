@@ -73,16 +73,14 @@ public class OOps {
 
         // Creating Home Object using parameterized constructor
 
-        Home abiBhavan = new Home(4,"pistaGreen","white",3);
-        Home jithuBhavan = new Home(3,"white","white",3);
-        Home sandraBhavan = new Home(4,"white","white",3);
+        Home abiBhavan = new Home(4,"pistaGreen","white",3); 
+        Home jithuBhavan = new Home(3,"white",3);
+        Home sandraBhavan = new Home();
 
         System.out.println(abiBhavan.room);
         System.out.println(jithuBhavan.room);
         System.out.println(sandraBhavan.room);
 
-        
-        
     }
 
 }
@@ -102,9 +100,6 @@ class Home{
     String lights;
     int floor;
 
-    // constructor
-    // method
-
     Home(){
         System.out.println("Home is created");
     }
@@ -115,6 +110,41 @@ class Home{
         this.lights = lights;
         this.floor = floor;
     }
+
+    Home(int room,String color,int floor){
+        this.room = room;
+        this.color = color;
+        this.floor = floor;
+    }
+
+    // functions in java or OOPs is called methods
+
+    void tvOn(){
+        System.out.println("TV is ON");
+    }
+
+    void tvOff(){
+        System.out.println("TV is OFF");
+    }
+
+    void tarnOnTheFan(){
+        System.out.println("Fan is ON");
+    }
+
+    void tarnOffTheFan(){
+        System.out.println("Fan is OFF");
+    }
+
+    void lightOn(){
+        System.out.println("Light is on");
+    }
+
+    void lightOff(){
+        System.out.println("Light is off");
+    }
+
+
+
 }
 
 // Class :-
@@ -122,10 +152,36 @@ class Home{
 // 2) class have meathods, properties , constructors, variables, etc.
 
 
+
 // Object :-
 
 // 1) Object is an instance of a class.
 // 2) Object is a real world entity.
+
+
+// Access Modifiers :
+// 1) public
+// 2) private
+// 3) protected
+// 4) default
+
+// public : 
+// public is an access modifier that is used to make a class, method, variable, etc. accessible from any where.
+// if we use a public access modifier then it is accessible from any where in our project.
+
+// private : 
+// private is an access modifier that is used to make a class, method, variable, etc. accessible from the same class.
+// if we use a private access modifier then it is accessible from the same class only.
+
+
+// protected : 
+// protected is an access modifier that is used to make a class, method, variable, etc. accessible from the same package .
+// if we use a protected access modifier then it is accessible from the same package only.
+
+// default : 
+// default is an access modifier that is used to make a class, method, variable, etc. accessible from the same package.
+// if we use a default access modifier then it is accessible from the same package only.
+
 
 // Constructor :-
 // 1) Constructor is a special method that is used to initialize the object.
@@ -141,3 +197,8 @@ class Home{
 
 
     // 2) Parameterized Constructor :-
+
+        // Parameterized Constructor is Constructor that takes parameters.
+
+        // Constructor Overloading :-
+            // Constructor Overloading is a feature of java that allows a class to have more than one constructor.

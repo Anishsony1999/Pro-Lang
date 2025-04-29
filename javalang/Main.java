@@ -2,12 +2,19 @@ package javalang;
 
 class Main {
     
-
     public static void main(String[] args) {
 
-        // java -> 2 type 
+        Home AbhBhavan = new Home(1, "white", "warm", 3);
+        Home BabiBhavan = new Home(4, "white", "white", 3);
 
-        // abstaction class
-        // interface
+        
+        AbhBhavan.tvOn();
+        BabiBhavan.tarnOnTheFan();
+
+        AbhBhavan.lightOff();
+        AbhBhavan.tarnOffTheFan();
+
+
+
     }
 }
