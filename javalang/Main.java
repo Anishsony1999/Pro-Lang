@@ -14,7 +14,6 @@ class Main {
         AbhBhavan.lightOff();
         AbhBhavan.tarnOffTheFan();
 
-
-
+        
     }
 }
