@@ -1,1 +1,19 @@
-Hello World
+Task:- 
+
+Create a Bank Class and User Class
+
+then collect a data from user object
+
+--------------------------
+
+1,create Account
+2,withdraw
+3,deposit
+4,check balance
+5,exit
+
+1 -> User(Name,add,email,phone,blance)
+2 -> ubalnce - amount (ubalnce < amount) give some warning
+3 -> ubalance + amount
+4 -> ubalance
+5 -> exit

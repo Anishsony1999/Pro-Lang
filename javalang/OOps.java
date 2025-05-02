@@ -144,6 +144,13 @@ class Home{
     }
 
 
+    int sum(int x,int y){
+        return x+y;
+    }
+
+    public String addName(String fname,String lname){
+        return fname + " " + lname;
+    }
 
 }
 
@@ -202,3 +209,46 @@ class Home{
 
         // Constructor Overloading :-
             // Constructor Overloading is a feature of java that allows a class to have more than one constructor.
+    // 3) Copy Constructor :-
+        // Copy Constructor is a constructor that takes an object of the same class as a parameter.
+        // Copy Constructor is used to create a copy of an object.
+
+        // Home(int room,String color,String lights,int floor){
+        //     this.room = room;
+        //     this.color = color;
+        //     this.lights = lights;
+        //     this.floor = floor;
+        // }
+
+        // Home(Home obj){
+        //     this.room = obj.room;
+        //     this.color = obj.color;
+        //     this.lights = obj.lights;
+        //     this.floor = obj.floor;
+        // }
+
+    // 4) Chain Constructor :-
+        // Chain Constructor is a constructor that calls another constructor of the same class.
+
+        // Home(int room,String color,String lights,int floor){
+        //     this(room,color,floor);
+        //     this.lights = lights;
+        // }
+
+
+    // Inheritance :-
+    // 1) Inheritance is a feature of java that allows a class to inherit the properties of another class.
+    // 2) Inheritance is oneway shareing.
+    // 3) in class we use extends keyword to inherit the properties of another class.
+    // 4) in interface we use implements keyword to inherit the properties of another interface.
+     
+    // Inheritance is 5 type : 
+            // 1) Single Inheritance - single parent single child
+            // 2) Multilevel Inheritance - multiple parent multiple child
+            // 3) Hierarchical Inheritance - single parent multiple child
+            // 4) Multiple Inheritance - multiple parent single child
+            // 5) Hybrid Inheritance - Multiple Inheritance + Hierarchical Inheritance
+
+    
+
+        
