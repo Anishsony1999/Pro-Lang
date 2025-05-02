@@ -1,0 +1,30 @@
+java sql conection
+-------------
+
+
+5 steps to connect java to sql
+
+in main meathod :
+    1, form connection object - 
+
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/binoja_db","root","");
+
+    2, form statement object - 
+
+        Statement stmt = con.createStatement();
+
+    3, form resultset object - 2 types (executeQuery and executeUpdate)
+       
+        int i = stmt.executeUpdate("insert into student values(101,'Anish','Kumar')");
+
+        ResultSet rs = stmt.executeQuery("select * from student");
+
+    4, print the result - 
+
+        while(rs.next()){
+            System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3));
+        }
+
+    5, close the connection - 
+        con.close();

@@ -11,6 +11,10 @@ import java.util.Set;
 
 public class Data {
 
+    public int sum (int x, int y){
+        return x+y;
+    }
+
     // Wrapper Class in Java
     // Wrapper Class is a class that wraps a primitive data type.
 
@@ -216,3 +220,13 @@ class User{
         return   name ;
     }
 }
+
+
+// Java Meathods
+
+// Sytax :
+
+// access_modifier return_type method_name(parameters){
+//    code
+//  }
+
