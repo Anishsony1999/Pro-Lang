@@ -1,4 +1,10 @@
-java sql conection
+java -> mysql 
+
+JDBC -  Java Database Connectivity
+----------------------------------
+
+
+java sql connection
 -------------
 
 
@@ -8,7 +14,16 @@ in main meathod :
     1, form connection object - 
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/binoja_db","root","");
+
+        Sytax :
+        Connection con = DriverManager.getConnection("database url","username","password");
+
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mvc","root","");
+
+        default port number in mysql - 3306
+        default port number in sql server - 1433
+        default port number in oracle - 1521
+        default port number in postgresql - 5432
 
     2, form statement object - 
 
