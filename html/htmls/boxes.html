@@ -1,57 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boxes</title>
+ 
+	<head>
+	<title> GRID </title>
 
-    <link href="main.css" rel="stylesheet">
-</head>
-<body>
-    
+	<style>
 
-    <div>
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus, sapiente.
-        </p>
-    </div>
-    <div>
-        <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo amet et aperiam sequi, tempora quo?
-        </p>
-    </div>
-    <div>
-        <p>    
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, inventore.
-        </p>
-    </div>
-    <div>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, quidem?
-        </p>
-    </div>
-    <div>
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, porro!
-        </p>
-    </div>
-    <div>
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, porro!
-        </p>
-    </div>
-    <div>
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, porro!
-        </p>
-    </div>
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quidem ex vel libero. Dolores consequuntur nihil quisquam, voluptatem eaque culpa.
-    </p>
-</body>
+		@keyframes k-name {
+			/* from{color:aqua}
+			to{color: blue;} */
 
-<style>
+			/* 0%{color: red;}
+			10%{ color: blue;}
+			20%{color: lavender;}
+			30%{color: chocolate;}
+			80%{color: violet;}
+			100%{color: red;} */
 
-</style>
+			0%{left:0;}
+			50%{left: 500px;}
+			100%{left: 0px;}
 
+		}
+
+		p{
+			color: red;
+			position: absolute;
+			animation: k-name 5s infinite 10s;
+		
+		}
+
+
+	</style>
+
+
+	</head>
+
+	<body>
+		<div id="move">
+			<p>animated div</p>
+		</div>
+	</body>
+ 
 </html>
