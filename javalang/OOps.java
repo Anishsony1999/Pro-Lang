@@ -7,7 +7,7 @@ public class OOps {
     // this is a programming paradigm that is based on the concept of objects.
 
 
-    // Createing real Home 
+    // Creating real Home 
     // we need a plan - engineer - blueprint
     // we need a builder - constructor team
     // we need a material - object
@@ -34,10 +34,13 @@ public class OOps {
     // 2) Object
 
     // pillar of oops :
-    // 3) Inheritance
+    // 3) Inheritance - extends
     // 4) Polymorphism
-    // 5) Abstraction
+    // 5) Abstraction - abstract class , interface 
     // 6) Encapsulation
+
+
+
 
     public static void main(String[] args) {
         // create object of String
@@ -249,6 +252,8 @@ class Home{
             // 4) Multiple Inheritance - multiple parent single child
             // 5) Hybrid Inheritance - Multiple Inheritance + Hierarchical Inheritance
 
-    
+    // public abstract class ClassName{
+
+    // }
 
         

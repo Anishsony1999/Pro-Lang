@@ -1,26 +1,45 @@
-@import "sub-css.css";
+ * {
+      margin: 0;
+      padding: 0;
+    }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
+    @keyframes k-name {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(500px); }
+      100% { transform: translateX(0); }
+    }
 
-div{
-    width: 200px;
-    height: 200px;
-    background-color: rgb(255, 0, 0);
-    margin: 10px;
-    display: inline-block;
-    padding: 20px 10px 10px 20px;
-    border-radius: 0 0 30px 0;
-}
+    #move {
+      position: relative;
+    }
 
-p{
-    color:red;
-}
+    p {
+      color: red;
+      position: absolute;
+      /* animation: k-name 5s infinite; */
+    }
 
-div p{
-    color:blue;
-}
+    .line {
+      width: 100vw;
+      height: 2px;
+      background-color: red;
+    }
+
+    @media only screen and (max-width: 1100px) {
+      .line {
+        background-color: blue;
+      }
+      p {
+        color: blue;
+        font-size: 30px;
+      }
+    }
+
+    @media only screen and (max-width: 700px) {
+      .line {
+        background-color: green;
+      }
+      p {
+        color: green;
+      }
+    }
