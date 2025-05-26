@@ -73,4 +73,15 @@
         // Alter Table employee Add salary int;
 
     // Modify : modify the column data type
+        // Syntax : 
+        // Alter Table tablename Modify columnname datatype;
+
+        // Example :
+        // Alter Table employee Modify salary varchar(20) null;
+    
+    // rename : rename the table
         // Syntax :
+        // Alter Table tablename Rename To newtablename;
+
+        // Example :
+        // Alter Table employee Rename To emp;
