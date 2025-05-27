@@ -85,3 +85,5 @@
 
         // Example :
         // Alter Table employee Rename To emp;
+
+        
