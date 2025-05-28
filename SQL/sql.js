@@ -86,4 +86,83 @@
         // Example :
         // Alter Table employee Rename To emp;
 
-        
+    // Drop : drop the column from the table
+        // Syntax :
+        // Alter Table tablename Drop columnname;
+
+        // Example :
+        // Alter Table employee Drop salary;
+
+
+// Alter Column Constraints :
+    // adding primary key
+        // Syntax :
+        // Alter Table tablename Add Primary Key (columnname);
+
+        // Example :
+        // Alter Table employee Add Primary Key (empid);
+
+    // adding foreign key
+        // Syntax :
+        // Alter Table tablename Add Foreign Key (columnname) References tablename(columnname);
+
+        // Example :
+        // Alter Table employee Add Foreign Key (deptid) References department(deptid);
+    
+    // adding default value
+        // Syntax :
+        // Alter Table tablename alter columnname set default value;
+
+        // Example :
+        // Alter Table employee alter salary set default 0;
+
+
+// Rename Table by Database :
+    // oracle :
+        // Syntax :
+        // Rename Table tablename to newtablename;
+
+        // Example :
+        // Rename Table employee to emp;
+
+    // mysql :
+        // Syntax :
+        // Rename Table tablename to newtablename;
+
+        // Example :
+        // Rename Table employee to emp;
+
+    // postgresql :
+        // Syntax :
+        // Alter Table tablename Rename To newtablename;
+
+        // Example :
+        // Alter Table employee Rename To emp;
+
+// DDL Commands :
+    // Grant : grant the permission to the user
+        // Syntax :
+        // Grant permission on tablename to username;
+
+        // Example :
+        // Grant all on employee to admin;
+
+    // Revoke : revoke the permission from the user
+        // Syntax :
+        // Revoke permission on tablename from username;
+
+        // Example :
+        // Revoke all on employee from admin;
+
+// TCL Commands :
+    // Commit : commit the transaction
+        // Syntax : 
+        // Commit;
+
+    // Rollback : rollback the transaction
+        // Syntax :
+        // Rollback;
+
+    // Savepoint : save the transaction
+        // Syntax :
+        // Savepoint savepointname; 
