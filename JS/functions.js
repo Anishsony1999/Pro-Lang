@@ -105,9 +105,10 @@ calHello();
 y = 10;
 function mul(x,y){
     if (y == 0) return;
-    mul(x,y-1);
-    document.writeln(x + " * " + y + " = " + x * y + "<br>");
+    mul(x,y-1); 
+    document.writeln(x + " * " + y + " = " + x * y + "<br>"); 
 }
 x = Number(prompt("Enter a number"));
 mul(x,y);
+
 
