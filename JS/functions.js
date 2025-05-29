@@ -54,8 +54,38 @@ function sum3(x,y){
     return z;
 }
 
-let x = Number(prompt("Enter first number"));
-let y = Number(prompt("Enter second number"));
+// let x = Number(prompt("Enter first number"));
+// let y = Number(prompt("Enter second number"));
 
-let z = sum3(x,y);
-document.writeln("Sum is : " + z);
+// let z = sum3(x,y);
+// document.writeln("Sum is : " + z);
+
+for(let i = 100 ; i >=0 ; i-=2){
+    document.writeln(i);
+}
+
+
+
+// let x = Number(prompt("Enter a number"));
+
+//5 -> 1 * 5 = 5 to 10 * 5 = 50 ;
+
+if (x > 5){
+    function xy(){}
+}else{
+    function yz(){}
+}
+
+// variable functions
+
+let sum = function(x,y){
+    return x + y;
+}
+
+document.writeln(sum(10,20));
+
+// Arrow functions
+
+let sum4 = (x,y) => x + y;
+
+document.writeln(sum4(10,20));
