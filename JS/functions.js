@@ -19,11 +19,9 @@ Functions:
             function_name();
 */
 
-function hello(){
-    document.writeln("hello world");
-}
 
-hello(); // function calling
+
+// hello(); // function calling
 
 function sum(){
     let x = Number(prompt("Enter first number"));
@@ -60,9 +58,9 @@ function sum3(x,y){
 // let z = sum3(x,y);
 // document.writeln("Sum is : " + z);
 
-for(let i = 100 ; i >=0 ; i-=2){
-    document.writeln(i);
-}
+// for(let i = 100 ; i >=0 ; i-=2){
+//     document.writeln(i);
+// }
 
 
 
@@ -70,22 +68,46 @@ for(let i = 100 ; i >=0 ; i-=2){
 
 //5 -> 1 * 5 = 5 to 10 * 5 = 50 ;
 
-if (x > 5){
-    function xy(){}
-}else{
-    function yz(){}
-}
+// if (x > 5){
+//     function xy(){}
+// }else{
+//     function yz(){}
+// }
 
 // variable functions
 
-let sum = function(x,y){
-    return x + y;
-}
+// let sum = function(x,y){
+//     return x + y;
+// }
 
-document.writeln(sum(10,20));
+// document.writeln(sum(10,20));
 
 // Arrow functions
 
 let sum4 = (x,y) => x + y;
 
 document.writeln(sum4(10,20));
+
+
+function hello(){
+    document.writeln("hello world <br>");
+}
+
+function calHello(){
+    hello();
+}
+
+calHello();
+
+
+// recursive function
+// function calling itself
+y = 10;
+function mul(x,y){
+    if (y == 0) return;
+    mul(x,y-1);
+    document.writeln(x + " * " + y + " = " + x * y + "<br>");
+}
+x = Number(prompt("Enter a number"));
+mul(x,y);
+

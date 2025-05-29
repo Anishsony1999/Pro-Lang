@@ -74,6 +74,7 @@ switch (action) {
             break;
         case "*" :
             document.writeln(num1 * num2);
+            z = num1 * num2;
             break;
         case "/" :
             document.writeln(num1 / num2);
