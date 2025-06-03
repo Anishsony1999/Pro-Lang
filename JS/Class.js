@@ -10,7 +10,7 @@
 // }
 
 
-// Object
+// Object:
 // Object is an instance of a class
 // Object is a variable that can hold a collection of functions and variables
 
@@ -87,3 +87,79 @@ document.writeln(s4.display());
 // with methods deposit, withdraw, check balance
 
 // Create Objects for 5 customers
+
+// Inheritance :- 
+
+// Inheritance is the one way sharing
+// sharing members of one class to another class
+// Inheritance is a mechanism in which one object acquires all the properties and behaviors of a parent object.
+// Inheritance is used to achieve re-usability of code.
+
+// Types of Inheritance:
+// 1. Single Inheritance
+// 2. Multiple Inheritance
+// 3. Multilevel Inheritance
+// 4. Hierarchical Inheritance
+// 5. Hybrid Inheritance
+
+
+class Parent{
+    x;
+
+    constructor(x){
+        this.x = x;
+    }
+    sum(){
+        return this.x * this.x;
+    }
+    hello(){
+       document.writeln("Hello World");
+    }
+}
+
+
+class Child extends Parent{
+
+    constructor(x){
+        // let p1 = new Parent(x);
+        super(x);
+    }
+    // super() is used to call the near by parent class constructor and methods
+    y =20;
+}
+
+// object creation
+
+let c1 = new Child(20);
+document.writeln("Child class y value : " + c1.y);
+document.writeln("Parent class x value : " + c1.x); 
+c1.hello();
+
+
+// Polymorphism
+
+// poly means many
+// morph means forms
+
+// polymorphism is many-forms
+
+// Overriding:
+// Overriding is a mechanism in which one class acquires all the properties and behaviors of a parent class.
+// Overriding is used to achieve re-usability of code.
+// Overriding is used to achieve run-time polymorphism.
+// and is happens in inheritance.
+
+class A {
+    hello(){
+        document.writeln("<br> Hello World from parent class <br>");
+    }
+}
+
+class B extends A{
+    hello(){
+        document.writeln("<br> Hello Students from child class");
+    }
+}
+
+let b1 = new B();
+b1.hello();
