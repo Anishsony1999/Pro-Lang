@@ -29,6 +29,8 @@
         </div>
 
         <input type="button" id="button" value="button1"/>
+
+        <span> Enter Your Name</span><input type="text" id="input1">
     </div>
 
 
@@ -53,6 +55,12 @@
         });
 
 
+        document.getElementById('input1').addEventListener('keyup',PopUpAlert);
+
+        function PopUpAlert(){
+            let name = document.getElementById('input1').value;
+            alert("Hello " + name);
+        }
 
     </script>
 </body>
