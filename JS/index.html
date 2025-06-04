@@ -18,7 +18,7 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="text-danger">Java Script Class</h1>
+        <h1 >Java Script Class</h1>
         <button class="btn btn-info" onclick="alert('Button on clicked ')">Click Here!</button>
         <button ondblclick="alert('Button on double clicked ')">Click Here!</button>
 
@@ -31,6 +31,24 @@
         <input type="button" id="button" value="button1"/>
 
         <span> Enter Your Name</span><input type="text" id="input1">
+
+        <div class="demo">
+            <h2>class name demo </h2>
+        </div>
+        
+        <input name="name" placeholder="Name">
+        <input type="radio" name="gender">Male
+        <input type="radio" name="gender">Female
+
+        <div>
+            <h1> Tag Name Selector</h1>
+        </div>
+
+        <div>
+            <button id="newhtml">
+                click me to new html
+            </button>
+        </div>
     </div>
 
 
@@ -39,7 +57,7 @@
         // 1. document.addEventListener('event',function);
         // 2. document.getElementById('id').addEventListener('event',function);
 
-        document.addEventListener('click',hello);
+        // document.addEventListener('click',hello);
         document.getElementById('box').addEventListener('mouseover',colorChange);
 
         function hello(){
@@ -54,13 +72,64 @@
             alert("Button Clicked");
         });
 
-
         document.getElementById('input1').addEventListener('keyup',PopUpAlert);
 
         function PopUpAlert(){
             let name = document.getElementById('input1').value;
             alert("Hello " + name);
         }
+
+
+        // 04/06/2025
+
+        document.getElementsByClassName('demo')[0]
+        .addEventListener('click',demoFunction);
+
+        function demoFunction(){
+            alert("demo function is called");
+        }
+
+        document.getElementsByName('gender')[0].
+        addEventListener('click',function(){
+            alert("Male is clicked");
+        });
+
+        document.getElementsByName('gender')[1].
+        addEventListener('click',function(){
+            alert("Female is clicked");
+        });
+
+        document.getElementsByTagName('h1')[1]
+        .addEventListener('mouseenter',function(){  
+            document.getElementsByTagName('h1')[0]
+            .style.color="green";
+       });
+
+       document.getElementsByTagName('h1')[1]
+        .addEventListener('mouseleave',function(){
+            document.getElementsByTagName('h1')[0]
+            .style.color="black";
+       });
+
+       document.getElementById('newhtml')
+       .addEventListener('click',function(){
+          let newH1 = document.createElement('h1');
+          document.body.appendChild(newH1);
+          newH1.innerHTML="new h1 Tag ";
+          newH1.style.backgroundColor="blue";
+       });
+
+
+       // craete a html page and create a single div
+       // with id createButton -> hover
+       // show a button 
+       // when the button is clicked 
+       // want to craete a new div 
+       // with 100px*100px
+       // with background color red
+       // if u click the button 2 times 
+       // want to create 2 divs
+
 
     </script>
 </body>

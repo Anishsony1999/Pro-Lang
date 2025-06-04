@@ -41,3 +41,45 @@
 // 6. Input - when form is inputted
 // 7. Invalid - when form is invalid 
 
+// Different DOM Methods:-
+// 1. getElementById() - returns the element with the specified id
+    // example:-
+    var x = document.getElementById("demo");
+
+// 2. getElementsByClassName() - returns the elements with the specified class name
+    // example:-
+    var x = document.getElementsByClassName("demo");
+
+// 3. getElementsByTagName() - returns the elements with the specified tag name
+    // example:-
+    var x = document.getElementsByTagName("input");
+
+// 4. getElementsByName() - returns the elements with the specified name
+    // example:-
+    var x = document.getElementsByName("demo");
+       //  <input type="text" name="demo">
+
+// 5. createElement() - creates an element
+    // example:-
+    var x = document.createElement("p");
+
+// 6. createTextNode() - creates a text node
+    // example:-
+    var x = document.createTextNode("Hello World");
+
+// 7. appendChild() - adds a node as the last child of a specified node
+    // example:-
+    var x = document.getElementById("demo");
+    var y = document.createElement("p");
+    x.appendChild(y);
+
+// 8. remove() - removes a node
+    // example:-
+    var x = document.getElementById("demo");
+    x.remove();
+
+// 9. replaceChild() - replaces a child node with another node
+    // example:-
+    var x = document.getElementById("demo");
+    var y = document.createElement("p");
+    x.replaceChild(y, x.firstChild);
