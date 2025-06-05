@@ -40,13 +40,16 @@
         <input type="radio" name="gender">Male
         <input type="radio" name="gender">Female
 
-        <div>
+        <div id="h1of2">
             <h1> Tag Name Selector</h1>
         </div>
 
         <div>
             <button id="newhtml">
                 click me to new html
+            </button>
+            <button id="remove">
+                click me to remove h1
             </button>
         </div>
     </div>
@@ -114,11 +117,18 @@
        document.getElementById('newhtml')
        .addEventListener('click',function(){
           let newH1 = document.createElement('h1');
+          let node = document.createTextNode("adding new line of text ");
           document.body.appendChild(newH1);
-          newH1.innerHTML="new h1 Tag ";
+          document.body.appendChild(node);
+
+          newH1.innerHTML="new <span class='bg-danger'>h1</span> tag";
           newH1.style.backgroundColor="blue";
        });
 
+
+       document.getElementById('remove').addEventListener('click',function(){
+           document.getElementsByTagName('h1')[2].remove();
+       });
 
        // craete a html page and create a single div
        // with id createButton -> hover
@@ -130,6 +140,18 @@
        // if u click the button 2 times 
        // want to create 2 divs
 
+ 
+       // Replace
+
+       document.getElementsByTagName('h1')[1].addEventListener('click',function(){
+
+           let newH1 = document.createElement('h1');
+           newH1.innerHTML="new H1 Text";
+
+           document.getElementById('h1of2')
+           .replaceChild(newH1,document.getElementsByTagName('h1')[1]);
+       });
+    
 
     </script>
 </body>
