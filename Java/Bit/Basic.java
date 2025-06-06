@@ -14,7 +14,7 @@ class Basic{
     } 
 
     public static void main(String[] args) {
-        int x = 13;
+        int x = 2147483647;
         System.out.println(bitToString(x));
     }
 }

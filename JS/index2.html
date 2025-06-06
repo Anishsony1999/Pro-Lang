@@ -32,26 +32,84 @@
                 <p id="display" class="fs-1">
                     
                 </p>
+
+
             </div>
+            <div>
+                <input type="text" id="input2" value="Anish">
+                <input type="text" id="result" >
+            </div>
+
+            <form id="form" action="" method="post" enctype="multipart/form-data">
+                <label for=""> Name : </label>
+                <input type="text" name="name" id="name">
+                <span style="color: red; display: none;" > Name is required</span> <br>
+                <label for=""> Email : </label>
+                <input type="text" name="email" id="email"> <br>
+                <label for=""> Phone : </label>
+                <input type="text" name="phone" id="phone"> <br>
+                <label for=""> Address : </label>
+                <input type="text" name="address" id="address"> <br>
+                <input type="submit" value="Submit">
+            </form>
         </div>
     </section>
 
     <script>
 
         document.getElementById('swap')
-        .addEventListener('click',function(){
+        .addEventListener('click',() =>{
 
             let p1 = document.getElementById('p1').innerHTML;
             let p2 = document.getElementById('p2').innerHTML;
 
             document.getElementById('p1').innerHTML = p2;
             document.getElementById('p2').innerHTML = p1;
-        })
+        });
 
-        document.getElementById('input1').addEventListener('keyup',function(){
+        document.getElementById('input1').addEventListener('keyup',() => {
             let value = document.getElementById('input1').value;
             document.getElementById('display').innerHTML = value;
         });
+
+
+        // textContent vs innerHTML vs innerText
+
+        // textContent:
+            // 1.Accept formatting text content only not tags
+        // innerHTML:
+            // 1.Accept tags and text content
+            // 2.if u want to add new html tags u can add it
+        // innerText:
+            // 1.Accept text content only not tags
+            // 2.if u want to add new html tags u can add it
+
+            // set value
+
+            // get value
+            // <input type="text" value="value">
+
+            document.getElementById('input2').addEventListener('keyup',() => {
+                let value = document.getElementById('input2').value.toUpperCase().trim();
+                document.getElementById('result').value = value;
+
+            });
+
+            // form validation
+
+            document.getElementById('form').addEventListener('submit',(e) => {
+                e.preventDefault(); // avoid page refresh
+                let name = document.getElementById('name').value.trim();
+                let email = document.getElementById('email').value;
+                let phone = document.getElementById('phone').value;
+                let address = document.getElementById('address').value;
+
+                if (name == '' || name.length < 3){
+                    // alert('name is required');
+                    document.getElementById('name').style.border = 'solid 2px red';
+                    document.getElementsByTagName('span')[1].style.display = 'block'; // <span style="display: none;">
+                }
+            });
 
     </script>
     
