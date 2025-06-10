@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timmer`</title>
+
+    <style>
+        .add{
+            display:none;
+            background-color: aqua;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .pop{
+            color:red;
+            font-size: 30px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="add">
+        <span id="close">x</span>
+        <h3>This is a Timmer Add </h3>
+    </div>
+
+    <span class="pop"> add showing in <span>0</span> sec..</span>
+
+
+    <script>
+        function timmer(time){
+            if(time == 0) return;
+            console.log(time);
+            document.getElementsByTagName('span')[2].innerHTML = time;
+            setTimeout(timmer(time-1), 1000);
+        }
+
+        timmer(5);
+        
+
+        // setTimeout(); -> we want to pass a function and time .
+
+        function showAdd(){
+            document.getElementsByClassName('pop')[0].style.display = 'none';
+            document.getElementsByClassName('add')[0].style.display = 'inline-block';
+        }
+        
+        // after 5 sec show add.
+        setTimeout(showAdd, 5000);
+
+    </script>
+</body>
+</html>
