@@ -53,5 +53,25 @@
         setTimeout(showAdd, 5000);
 
     </script>
+    <script>
+        
+        // setInterval(); -> like setTimeOut but it will run the function again and again.
+        // clearInterval(); -> we can stop the setInterval.
+
+        let count = 0 ;
+
+        let close_add = setInterval(() => {
+            closeAdd();
+            clearInterval(close_add);
+        },10000);
+
+        document.getElementById('close').addEventListener('click',closeAdd);
+
+        function closeAdd(){
+            document.getElementsByClassName('add')[0].style.display = 'none';
+        }
+    </script>
+
+
 </body>
 </html>
