@@ -14,6 +14,7 @@
             bottom: 20px;
             border-radius: 50%;
         }
+
     </style>
 </head>
 <body>
@@ -21,8 +22,33 @@
     <button onclick="windowOpen()">open</button>
     <button onclick="WindowClose()">close</button>
 
+    <button onclick="render()">
+        render subject
+    </button>
+
+    <ul id="list"></ul>
+
+
+
     <div id="one"></div>
+    
     <!-- <div></div> -->
+
+    <script>
+        function render(){
+            let subject = ['Java','JS','PHP','Python','C++','C#','HTML','CSS'];
+
+            for( sub of subject){
+                let li = document.createElement('li');
+                
+                node = document.createTextNode(sub);
+
+                li.appendChild(node);
+
+                document.getElementById('list').appendChild(li);
+            }
+        }
+    </script>
 
     <script>
         document.getElementById('btn').addEventListener('click',()=>{
