@@ -28,20 +28,10 @@
         <h3>This is a Timmer Add </h3>
     </div>
 
-    <span class="pop"> add showing in <span>0</span> sec..</span>
+    <span class="pop"> add showing in <span>5</span> sec..</span>
 
 
     <script>
-        function timmer(time){
-            if(time == 0) return;
-            console.log(time);
-            document.getElementsByTagName('span')[2].innerHTML = time;
-            setTimeout(timmer(time-1), 1000);
-        }
-
-        timmer(5);
-        
-
         // setTimeout(); -> we want to pass a function and time .
 
         function showAdd(){
@@ -51,6 +41,15 @@
         
         // after 5 sec show add.
         setTimeout(showAdd, 5000);
+
+        let functionName = setInterval(()=>{
+            let time = document.getElementsByClassName('pop')[0].getElementsByTagName('span')[0].innerHTML;
+            if(time == 0){
+                clearInterval(functionName);
+            }
+            time --;
+            document.getElementsByClassName('pop')[0].getElementsByTagName('span')[0].innerHTML = time;
+        },1000);
 
     </script>
     <script>
