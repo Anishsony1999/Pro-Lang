@@ -150,6 +150,9 @@ supporting tags
 
 <br>
 
+<input type="range" onchange="output.value=range.value" id="range" value="20"> <br>
+Range Value :
+<output id="output">0</output> <br>
 
 
 <input form="form1" type="submit" value="sub" formaction="/" formmethod="get">
@@ -160,3 +163,21 @@ supporting tags
 <textarea cols="30" rows="20"  >
     
 </textarea>
+
+
+<form>
+    <fieldset>
+        <label>Name : </label> 
+        <input type="text" name="name" required><br>
+        <label for="">Gender : </label>
+        <input type="radio" name="gender" required> Male
+        <input type="radio" name="gender" required> Female <br>
+        <label > DOB</label>
+        <input type="date" name="dob" required><br>
+        <label >Email : </label>
+        <input type="text" name="email" pattern="" required><br>
+        
+
+
+    </fieldset>
+</form>
