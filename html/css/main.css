@@ -1,0 +1,30 @@
+
+
+#text,#name{
+    width: 200px;
+    font-size: 20px;
+    border: 2px solid red;
+}
+
+#email{
+    width: 200px;
+    font-size: 20px;
+    border: 2px solid green;
+}
+
+.example{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: pink;
+}
+
+[alt]{
+    border: 2px dotted magenta;
+}
+
+h1{
+    color: green ;
+    font-size: 30px;
+    background-color: purple !important;
+}
