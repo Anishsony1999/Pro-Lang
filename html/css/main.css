@@ -1,4 +1,9 @@
-
+/* *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} */
+@import "main1.css";
 
 #text,#name{
     width: 200px;
@@ -19,12 +24,43 @@
     background-color: pink;
 }
 
-[alt]{
-    border: 2px dotted magenta;
-}
-
 h1{
     color: green ;
     font-size: 30px;
     background-color: purple !important;
+}
+
+[alt="logo"]{
+    border: 2px dotted magenta;
+}
+
+
+[type="email"]{
+    background-color: pink;
+}
+
+a:active{color: orchid;}
+
+a:visited{color: darkslategray;}
+
+a:link{color: saddlebrown;}
+
+.example:hover{
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+input:disabled{color: black;}
+
+input:checked{accent-color:rgb(227, 14, 110);}
+
+#p{
+    margin: 100px;
+    padding: 20px;
+    border: 1px solid;
+}
+
+#p~p{
+    font-size: 20px;
+    color: coral;
 }
