@@ -1,7 +1,7 @@
 /* *{
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    box-sizing:border-box;
 } */
 @import "main1.css";
 
@@ -116,4 +116,28 @@ input:checked{accent-color:rgb(227, 14, 110);}
 img{
     width: 80px;
     float: right;
+}
+
+.fonts{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* font-size: 20px; */
+    font-weight: bold;
+    color: blue;
+    font-style: oblique;
+    text-decoration: none; /* unorderlist, <a> */
+    text-align: center;
+    text-transform: capitalize;
+    /* text-shadow: 20px 20px 5px rgb(205, 64, 64); */
+
+    word-spacing: 8px;
+    line-height: 20px;
+    letter-spacing: 5px;
+
+
+
+}
+
+.fonts p{
+    
+    color:pink;
 }
