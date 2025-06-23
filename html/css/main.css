@@ -79,10 +79,6 @@ input:checked{accent-color:rgb(227, 14, 110);}
 
     padding: 20px 10px 2px 8px;
 
-
-
-
-
     border: 1px solid;
 }
 
@@ -96,26 +92,47 @@ input:checked{accent-color:rgb(227, 14, 110);}
     justify-content: center;
     align-items: center;
     gap: 20px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
+    /* padding: 20px; */
+
+    /* border-top: 2px;
+    border-bottom: 2px;
+    border-left: 2px;
+    border-right: 2px;
+    border-color: red;
+    border-style: double; /* dashed , dotted, double, groove , ridge */
+    /* border-width: 20px; */
+
+    /* border:2px solid red; */
+    border:2px solid red;
+    /* margin-left: 20px; */
+
+    /* border-radius: 10px 90px; */
+    border-radius: 10px 20px 0px;
+    /* border-radius: 10px 20px 30px 40px; */
 }
 
 #divs div{
-    min-height: 100px;
-    min-width: 100px;
+    height: 100px;
+    width: 100px;
     background-color: plum;
-    justify-content: center;
-    align-items: center;
-    display: flex;
 
-    /* margin: 10px; */
-    padding: 10px;
+    /* margin: 20px; */
+    /* y axis x axis */
+    /* margin: 10px 20px 30px 40px; */
+    /* padding: 20px;  */
+    
+
+
+
     border: 3px solid rgb(12, 186, 255);
 }
 
 
 img{
+    /* float: right; */
+    float: left;
     width: 80px;
-    float: right;
 }
 
 .fonts{
@@ -132,9 +149,6 @@ img{
     word-spacing: 8px;
     line-height: 20px;
     letter-spacing: 5px;
-
-
-
 }
 
 .fonts p{

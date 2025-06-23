@@ -1,71 +1,264 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="jQuery.js"></script>
-
-    <!-- <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script> -->
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-</head>
-<body class="bg-black text-white">
-
-    <div class="container">
-        <div class="row">
-            <div class="col p-5">
-                <h1 class="text-danger border-bottom border-danger pb-2 d-inline">
-                    jQuery
-                </h1>
-
-                <ul class="mt-5">
-                    <li>
-                        jQuery is a javaScript Library.
-                    </li>
-                    <li>
-                        jQuery greatly simplifies javaScript programming.
-                    </li>
-                    <li>
-                        jQuery is easy to learn.
-                    </li>
-
-                    Write less,do more
-                </ul>
-
-                <section>
-                    <div class="bg-info">
-                        <p> 
-
-                            syntax:<br>
-                               <span class="ms-5"> $(selector).action()
-                               </span>
-
-                        </p>
-
+<body>
+<div class="hk-pg-wrapper">   
+    <div class="container-fluid">
+        <form method="POST" action="<?= base_url('Doctor/add_details') ?>" novalidate class="needs-validation">
+            <div class="row">
+                <!-- Specialization -->
+                <div class="col-md-6">
+                    <div class="form-group" style="margin-bottom:3rem;">
+                        <label for="specialization">Specialization Details</label>
+                        <input type="text" class="form-control" id="specialization" placeholder="Your Specialization" name="specialization">
                     </div>
-                </section>
-
-                <button class="btn btn-warning">hide the p</button>
+                </div>
+                
+                <!-- Consultation Fee -->
+                <div class="col-md-6">
+                    <div class="form-group" style="margin-bottom:3rem;">
+                        <label for="consultation_fee">Consultation Fee</label>
+                        <input type="tel" class="form-control" id="consultation_fee" placeholder="Your Consultation Fee" name="consultation_fee">
+                    </div>
+                </div>
             </div>
-        </div>
+
+            <div class="row">
+                <!-- Languages -->
+                <div class="col-md-6">
+                    <div class="form-group" style="margin-bottom:3rem;">
+                        <label for="languages">Languages</label>
+                        <input type="text" class="form-control" id="languages" placeholder="Your Languages" name="languages">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Doctor Detail -->
+                <div class="col-md-6">
+                    <div class="form-group" style="margin-bottom:3rem;">
+                        <label for="doctor_detail">Doctor Detail</label>
+                        <div id="editor"></div>
+                        <input type="hidden" name="doctor_detail" id="doctor_detail">
+                    </div>
+                </div>
+
+                <!-- Services Offered -->
+                <div class="col-md-6">
+                    <div class="form-group" style="margin-bottom:3rem;">
+                        <label for="services_offered">Services Offered</label>
+                        <div id="editor2"></div>
+                        <input type="hidden" name="services_offered" id="services_offered">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                
+            <div class="col-md-6 " >
+                    <div>
+                        <div class="float-right">
+                            <button class="btn btn-success float-right" type="submit">Save</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Submit Button -->
+            </div>
+
+            
+        </form>
     </div>
-
-    <script>
-        document.getElementsByTagName('button')[0].addEventListener('click',function(){
-            document.getElementsByTagName('p')[0].style.display='none';
-        });
-    </script>
+</div>
 
 
-    <script>
-        $(document).ready(function(){
-            $("button").click(function(){ 
-                $("p").hide();
-            });
-        });
-    </script>
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+<script>
+  const quill = new Quill("#editor", {
+    theme: "snow"
+  });
+
+  const quill1 = new Quill("#editor2", {
+    theme: "snow"
+  });
+
+  // On form submit, copy Quill content to hidden inputs
+  document.querySelector("form").addEventListener("submit", function(e) {
+    document.querySelector("#doctor_detail").value = quill.root.innerHTML;
+    document.querySelector("#services_offered").value = quill1.root.innerHTML;
+  });
+</script>
 </body>
+
+<div class="page-container" style="display: flex; flex-direction: column;position: relative;">
+                <div style="flex-grow: 1;">
+            
+                </div>
+            
+                <div class="hk-footer-wrap container-fluid border-top">
+                    <footer class="footer" style=" position:absolute; bottom:0px; width:100%;">
+                        <div class="row justify-content-center text-center">
+                            <div class="col-md-6 col-sm-12">
+                                <p style="margin-bottom: 0;">Powered by <a href="http://pharmayushconnect.com/" class="text-dark" target="_blank">PHARMAYUSH HEALTH CARE</a> © 2025</p>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+            <!-----------------------------Alert Box------------------------>
+            <!-- Modal -->
+            <div class="modal fade " id="addTimeSlot" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="addTimeSlotLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" style="text-align:center;" id="addTimeSlotLabel">Please Add Your Time Slot.</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body text-center" id="alert-msg">
+                        <a class="btn btn-primary  w-25" href="<?=base_url('doctor/doctorprofile#Time-Slot')?>">Add</a>
+                        <button type="button" class="btn btn-secondary w-25" data-dismiss="modal">Later</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-------------------------------------------------------------->
+	
+	<!-- Bootstrap Core JavaScript -->
+	<script src="<?= base_url('assets/vendors/popper.js/dist/umd/popper.min.js'); ?>"></script>
+	<script src="<?= base_url('assets/vendors/bootstrap/dist/js/bootstrap.min.js'); ?>"></script>
+
+	<!-- Jasny-bootstrap  JavaScript -->
+	<script src="<?= base_url('assets/vendors/jasny-bootstrap/dist/js/jasny-bootstrap.min.js'); ?>"></script>
+
+	<!-- Slimscroll JavaScript -->
+	<!--<script src="<?= base_url('assets/dist/js/jquery.slimscroll.js'); ?>"></script>-->
+
+	<!-- Data Table JavaScript -->
+	<script src="<?= base_url('assets/vendors/datatables.net/js/jquery.dataTables.min.js'); ?>"></script>
+	<script src="<?= base_url('assets/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js'); ?>"></script>
+	<script src="<?= base_url('assets/vendors/datatables.net-dt/js/dataTables.dataTables.min.js'); ?>"></script>
+	<script src="<?= base_url('assets/vendors/datatables.net-buttons/js/dataTables.buttons.min.js'); ?>"></script>
+	<!--<script src="<?= base_url('assets/vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js'); ?>"></script>-->
+	<script src="<?= base_url('assets/vendors/datatables.net-buttons/js/buttons.flash.min.js'); ?>"></script>
+	<script src="<?= base_url('assets/vendors/datatables.net-buttons/js/buttons.html5.min.js'); ?>"></script>
+	<script src="<?= base_url('assets/vendors/datatables.net-buttons/js/buttons.print.min.js'); ?>"></script>
+	<script src="<?= base_url('assets/vendors/datatables.net-responsive/js/dataTables.responsive.min.js'); ?>"></script>
+	<!-- <script src="<?= base_url('assets/dist/js/dataTables-data.js'); ?>"></script> -->
+
+	<!-- FeatherIcons JavaScript -->
+	<script src="<?= base_url('assets/dist/js/feather.min.js'); ?>"></script>
+
+	<!-- Fancy Dropdown JS -->
+	<script src="<?= base_url('assets/dist/js/dropdown-bootstrap-extended.js'); ?>"></script>
+
+	<!-- Toggles JavaScript -->
+	<script src="<?= base_url('assets/vendors/jquery-toggles/toggles.min.js'); ?>"></script>
+	<script src="<?= base_url('assets/dist/js/toggle-data.js'); ?>"></script>
+	
+	<!-- Select2 JavaScript -->
+	<script src="<?= base_url('assets/vendors/select2/dist/js/select2.full.min.js'); ?>"></script>
+	<script src="<?= base_url('assets/dist/js/select2-data.js'); ?>"></script>
+	
+	<!-- Counter Animation JavaScript -->
+	<script src="<?= base_url('assets/vendors/waypoints/lib/jquery.waypoints.min.js'); ?>"></script>
+	<script src="<?= base_url('assets/vendors/jquery.counterup/jquery.counterup.min.js'); ?>"></script>
+	
+	<!-- Easy pie chart JS -->
+	<script src="<?= base_url('assets/vendors/easy-pie-chart/dist/jquery.easypiechart.min.js'); ?>"></script>
+	
+	<!-- Sparkline JavaScript -->
+	<script src="<?= base_url('assets/vendors/jquery.sparkline/dist/jquery.sparkline.min.js'); ?>"></script>
+	
+	<!-- Morris Charts JavaScript -->
+	<script src="<?= base_url('assets/vendors/raphael/raphael.min.js'); ?>"></script>
+	<script src="<?= base_url('assets/vendors/morris.js/morris.min.js'); ?>"></script>
+   
+	<!-- EChartJS JavaScript -->
+	<script src="<?= base_url('assets/vendors/echarts/dist/echarts-en.min.js'); ?>"></script>
+
+	<!-- ChartJS JavaScript -->
+	<script src="<?= base_url('assets/vendors/chartjs/Chart.min.js'); ?>"></script>
+	
+	<!-- Peity JavaScript -->
+	<script src="<?= base_url('assets/vendors/peity/jquery.peity.min.js'); ?>"></script>
+   
+	<!-- Toastr JS -->
+	<script src="<?= base_url('assets/vendors/jquery-toast-plugin/dist/jquery.toast.min.js'); ?>"></script>
+
+  <!-- Daterangepicker JavaScript -->
+  <script src="<?= base_url('assets/vendors/moment/min/moment.min.js'); ?>"></script>
+  <script src="<?= base_url('assets/vendors/moment/min/moment-range.js'); ?>"></script>
+  <script src="<?= base_url('assets/vendors/daterangepicker/daterangepicker.js'); ?>"></script>
+   
+	<!-- Switchery JS -->
+	<script src="<?= base_url('assets/vendors/switchery/dist/switchery.min.js'); ?>"></script>
+
+  <!-- Tinymce JavaScript -->
+  <script src="<?= base_url('assets/vendors/tinymce/tinymce.min.js'); ?>"></script>
+	
+  <!-- Bootstrap-table JavaScript -->
+  <script src="<?= base_url('assets/vendors/bootstrap-table/dist/bootstrap-table.min.js'); ?>"></script>
+
+	<!-- Init JavaScript -->
+	<script src="<?= base_url('assets/dist/js/init.js'); ?>"></script>	
+	<script src="<?= base_url('assets/dist/js/validation-data.js'); ?>"></script>
+	<script src="<?= base_url('assets/dist/js/settings.js'); ?>"></script>
+	<script src="<?= base_url('assets/dist/js/tooltip-data.js'); ?>"></script>
+
+	<script type="text/javascript" id="pageloaderscript">
+		var readyStateCheckInterval = setInterval(function() {
+		    if (document.readyState === "complete") {
+		        clearInterval(readyStateCheckInterval);
+		        var pageloader = document.getElementById('pageloader');
+		        pageloader.parentNode.removeChild(pageloader);
+		        document.getElementById('pagecontent').style.display = "block";
+		    }
+		}, 10);
+		
+	</script>
+
+	<script type="text/javascript">
+
+
+		$(document).ready(function() {
+			"use strict";
+			console.log('footer start');
+			
+			var switcheryElems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+
+			switcheryElems.forEach(function(html) {
+			  var switchery = new Switchery(html);
+			});
+
+			window.setTimeout(function() {
+				$(".alert-inv-success").fadeTo(500, 0).slideUp(500, function(){
+					$(this).remove();
+					if(location.pathname.includes("user/create")){
+						location = '<?= base_url('user'); ?>';
+					}
+					// if(location.pathname.includes("user/permissions/")){
+					// 	location = '<?= base_url('user'); ?>';
+					// }
+				});
+			}, 7000);
+
+
+			
+		});
+
+	</script>
+
+	<script type="text/javascript">
+		var popupElement = '<div class="btn-group btn-toggle"><button class="btn btn-sm btn-info">On</button><button class="btn btn-sm btn-primary active">Off</button></div>';
+
+		$('#popbutton').popover({
+		    animation: true,
+		    content: popupElement,
+		    html: true
+		});
+	</script>
+	
+</body>
+
 </html>
+
