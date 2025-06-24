@@ -1,0 +1,257 @@
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .profile-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .doctor-image {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        .book-btn {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            border: none;
+            border-radius: 15px;
+            padding: 15px 30px;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+            width: 100%;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+        .book-btn:hover {
+            transform: translateY(-2px);
+            color: white;
+        }
+        .info-section {
+            color: #6c757d;
+        }
+        .info-title {
+            color: #4ecdc4;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .info-content {
+            color: #495057;
+            line-height: 1.6;
+        }
+        .doctor-name {
+            color: #495057;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .credentials {
+            color: #4ecdc4;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+        .share-btn {
+            background: none;
+            border: none;
+            color: #4ecdc4;
+            font-size: 1.5rem;
+        }
+        .info-btn {
+            background: none;
+            border: none;
+            color: #6c757d;
+            font-size: 1.2rem;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .nav-tabss {
+            border-bottom: 2px solid #e9ecef;
+            margin-top: 40px;
+        }
+        .nav-tabss .nav-link {
+            border: none;
+            color: #6c757d;
+            font-weight: 500;
+            padding: 15px 20px;
+            border-radius: 0;
+        }
+        .nav-tabss .nav-link.active {
+            background: none;
+            border-bottom: 3px solid #4ecdc4;
+            color: #495057;
+            font-weight: 600;
+        }
+        .bio-section {
+            margin-top: 30px;
+            padding: 20px 0;
+        }
+        .bio-text {
+            color: #6c757d;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        /*.logo {*/
+        /*    position: absolute;*/
+        /*    top: 20px;*/
+        /*    left: 20px;*/
+        /*    color: #4ecdc4;*/
+        /*    font-size: 24px;*/
+        /*    font-weight: bold;*/
+        /*}*/
+    </style>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10 col-xl-8">
+                <div class="profile-card position-relative">
+                    
+                    <button class="info-btn">
+                        <i class="fas fa-info-circle"></i>
+                    </button>
+                    
+                    <div class="p-4 p-md-5">
+                        <div class="row">
+                            <div class="col-12 col-md-4 text-center mb-4 mb-md-0">
+                                <img src="../../<?= $doctor_detail->profile_photo ?? 'uploads/doctor/noprofile.png'?>" 
+                                     alt="<?php echo $doctor_detail->display_name; ?>" class="doctor-image mb-3">
+                                <button class="book-btn">
+                                    <i class="fas fa-calendar-alt me-2"></i>
+                                    Book Appointment
+                                </button>
+                            </div>
+                            
+                            <div class="col-12 col-md-8">
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <h1 class="doctor-name mb-0"><?php echo $doctor_detail->display_name; ?></h1>
+                                    <button class="share-btn btn " onclick="linkshare()">
+                                        <i class="fas fa-share-alt"></i>
+                                    </button>
+                                </div>
+                                
+                                <p class="credentials"><?php echo $doctor_detail->specialization; ?>.</p>
+                                
+                                <div class="row">
+                                    <div class="col-12 col-lg-7 mb-4">
+                                        <div class="info-title">
+                                            <i class="fas fa-stethoscope"></i>
+                                            Specialization
+                                        </div>
+                                        <div class="info-content">
+                                            <?php echo $doctor_detail->specialization_details; ?>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-12 col-lg-5 mb-4">
+                                        <div class="info-title">
+                                            <i class="fas fa-id-card"></i>
+                                            Registration Number
+                                        </div>
+                                        <div class="info-content">
+                                            <?php echo $doctor_detail->doctor_reg_no; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-12 col-lg-7 mb-4">
+                                        <div class="info-title">
+                                            <i class="fas fa-rupee-sign"></i>
+                                            Consultation Fee
+                                        </div>
+                                        <div class="info-content">
+                                            <strong><?php echo $doctor_detail->	consultation_fee; ?></strong>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-12 col-lg-5 mb-4">
+                                        <div class="info-title">
+                                            <i class="fas fa-language"></i>
+                                            Languages
+                                        </div>
+                                        <div class="info-content">
+                                            <?php echo $doctor_detail->languages; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Navigation Tabs -->
+                        <ul class="nav nav-tabss" id="doctorTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active shadow-none btn" id="intro-tab" data-bs-toggle="tab" data-bs-target="#intro" type="button" role="tab">
+                                    Doctor's Intro
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link shadow-none btn" id="faq-tab" data-bs-toggle="tab" data-bs-target="#faq" type="button" role="tab">
+                                    FAQ's
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link shadow-none btn" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab">
+                                    Patient's Review
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link shadow-none btn" id="services-tab" data-bs-toggle="tab" data-bs-target="#services" type="button" role="tab">
+                                    Services Offered
+                                </button>
+                            </li>
+                        </ul>
+                        
+                        <!-- Tab Content -->
+                        <div class="tab-content" id="doctorTabsContent">
+                            <div class="tab-pane fade show active bio-section" id="intro" role="tabpanel">
+                                <p class="bio-text">
+                                    <?php echo $doctor_detail->doctor_detail; ?>
+                                </p>
+                            </div>
+                            <div class="tab-pane fade bio-section" id="faq" role="tabpanel">
+                                <p class="bio-text">FAQ Comming Soon.</p>
+                            </div>
+                            <div class="tab-pane fade bio-section" id="reviews" role="tabpanel">
+                                <!--<p class="bio-text">-->
+                                    <a href="" class="btn btn-info text-white">add review</a>
+                                <!--</p>-->
+                            </div>
+                            <div class="tab-pane fade bio-section" id="services" role="tabpanel">
+                                <p class="bio-text"><?php echo $doctor_detail->services_offered; ?></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function linkshare(){
+            if (navigator.share) {
+            try {
+            await navigator.share({
+                title: 'My Website',
+                text: 'Check out this website!',
+                url: window.location.href,
+            });
+            console.log('Shared successfully');
+            } catch (error) {
+            console.error('Error sharing:', error);
+            }
+        } else {
+            alert('Share not supported on this browser. Copy the URL manually.');
+        }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

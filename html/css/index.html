@@ -10,7 +10,7 @@
     <!-- <link rel="stylesheet" href="main1.css"> -->
 
 </head>
-<body style="margin-left: 200px;">
+<body >
     <h1 style="color:black">
         CSS
     </h1>
@@ -197,7 +197,77 @@
 
         <a href="" style="text-decoration: none;"> link</a>
 
+        <section>
+            <ul class="list">
+                <li>list1</li>
+                <li>list2</li>
+            </ul>
+        </section>
+
+        <section style="height: 100vh;width: 100vw;" id="background">
+            <h2 style="text-align: center;">BackGround</h2>
+
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam odit mollitia excepturi veritatis! Dicta maxime, nostrum rem recusandae enim, neque voluptate, illum earum nulla accusamus dolore possimus sequi libero error. Eveniet dolorem reprehenderit dolor nesciunt officia neque veritatis dicta velit iure, nulla ex qui doloremque quidem aperiam maiores? Aperiam eveniet quisquam in quis cupiditate. Aspernatur eos facilis placeat laboriosam repellendus nisi rem repellat possimus molestias unde et architecto dicta neque voluptates veritatis itaque totam earum cupiditate corporis vero, tempora sequi? Ipsa eveniet ut, corrupti adipisci enim iusto dolorem voluptates labore ipsam repudiandae corporis error modi praesentium molestiae soluta a cumque.
+
+        </section>
+
+        <section style="height: 100vh;width: 100vw;" >
+            <h3> 3rd Section </h3>
+        </section>
+
+        <nav id="navbar">
+            <ul>
+                <li><a href="#background">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
+
         <style>
+            
+
+            #navbar{
+                position: fixed;
+                top:0;
+                right: 0;
+            }
+
+            #navbar a{
+                text-decoration: none;
+                color: white;
+            }
+
+            #navbar li{
+                display: inline-block;
+                list-style-type: none;
+                padding-right: 20px;
+            }
+
+
+            #background{
+                /* background: ; */
+                /* background-color: aqua; */
+                /* background-image: url("C:/Users/HP/Downloads/download1.jpeg"); */
+                /* background-image: url("../../img/img1.jpeg"); */
+                /* background-repeat: no-repeat; */
+                /* background-size: cover; 50%,70% */
+                /* background-position: center; */
+
+                /* background-attachment: fixed; */
+                /* background-position-x: center; right, left, center */
+                /* background-position-y: top; top, bottom, center */
+
+                /* single hander property */
+
+                background: aqua url("../../img/img1.jpeg") no-repeat fixed center ;
+            }
+
+
+            .list{
+                list-style-type: none;
+                /* list-style-image: url("../../img/img1.jpeg"); */
+            }
+
             .stick{
                 position: sticky;
                 top:0;
