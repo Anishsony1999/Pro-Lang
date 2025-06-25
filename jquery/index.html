@@ -9,20 +9,40 @@
 <body class="bg-black text-white">
 
     <div class="container">
-        <div class="row mt-5 p-3 gap-2 div">
+        <div class="row mt-5 p-3 gap-2 ">
                 <div class="div">1</div>
                 <div class="div">2</div>
                 <div class="div">3</div>
                 <div class="div">4</div>
                 <div class="div">5</div>
                 <div class="div">6</div>
+                <div></div>
         </div>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, asperiores.<span>hi</span></p>
+        <p>Eligendi, culpa aliquam temporibus rerum cumque natus aut ipsum possimus.</p>
+        <p>Accusamus sint odio maxime ut architecto iste alias, nesciunt hic!</p>
+        <p>Iste commodi animi, sapiente fugiat voluptatum deserunt repudiandae! Sunt, iste.</p>
+        <p>Quidem pariatur quam debitis numquam cumque ipsam in fugiat quod.</p>
+        <p style="height: 10px;"></p>
+        <img src="/" alt="hi">
 
         <div class="row">
             <div class="col btn btn-info text-center">
                 hide me
             </div>
         </div>
+
+        <div class="row">
+            <div class="col">
+                <form action="">
+                    <input type="text" name="name" id="name">
+                    <input type="submit" value="submit">
+                    <input type="text" id="out" >
+                </form>
+            </div>
+        </div>
+
     </div>
 
 
@@ -32,18 +52,86 @@
     <script>
         $(document).ready(function(){
 
-            $(".div:even").hover(function(){
+            $(".div:nth-child(2)").hover(function(){
                 $(".btn").css("background-color","blue");
             });
 
-            $(".div:odd").hover(function(){
+            $(".div:nth-last-child(6)").hover(function(){
                 $(".btn").css("background-color","red");
             });
-// 9080264554
+
+            // $("p:nth-of-type(2)").hover(function(){
+            //     $("p").css("background-color","green");
+            // });
+            // *,space , > , + , ~ 
+
+            $("div:empty").css("background-color","green");
+
+            $("[alt=hi]").css("border","2px dotted red");
+
+
+
+            // Events
+
+            // mouse events             
+                // 1, click
+                // 2, dblclick
+                // 3, mouseenter
+                // 4, mouseleave
+                // 5, mouseover
+                // 6, mouseout
+
+            // keyboard events
+                // 1, keydown
+                // 2, keyup
+                // 3, keypress
+
+            // form events
+                // 1, change
+                // 2, submit
+                // 3, focus
+                // 4, blur
+
+            // document events
+                // 1, ready
+                // 2, scroll
+                // 3, resize
+                // 4, load
+                // 5, unload
+
+
+            // $("p").mouseleave(function(){
+            //     $(this).css("color","yellow");
+            // });
+
+            // $("p").mouseenter(function(){
+            //     $(this).css("color","red");
+            // });
+
+            // on() method
+
+            $("p").on('click',function(){ // $("p").click(function(){
+                $(this).css("color","yellow");
+            });
+
+            $("p").on({
+                mouseenter:function(){
+                    $(this).css("color","red");
+                },
+                mouseleave:function(){
+                    $(this).css("color","green");
+                }
+            });
+
+            $("#name").keyup(function(){
+                let x = $(this).val(); // val() is help to read the valuses of the input field
+                $("#out").val(x);
+            });
+
         });
     </script>
     <style>
-        .row div{
+        .row:nth-child(1) div{
             width: 100px;
             height: 100px;
             background-color: aqua;
