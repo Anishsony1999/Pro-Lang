@@ -217,14 +217,110 @@
 
         <nav id="navbar">
             <ul>
-                <li><a href="#background">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Contact</a></li>
+                <li>Home</li>
+                <li>home</li>
+                <li>About</li>
             </ul>
         </nav>
 
+
+        <section style="text-align: center;margin-bottom: 30px; display: flex;align-items: center;flex-direction: column;">
+            <h2>3D Transform</h2>
+            transform: values;
+
+            <div id="div">
+                <div style="background-color: azure;width: 100%;height: 50%;"></div>
+                <div style="background-color: rgb(29, 49, 178);width: 100%;height: 50%;"></div>
+            </div>
+        </section>
+
+        <section>
+            <h3>Display Grid</h3>
+ 
+            <style>
+            
+            .grid-box{
+                display:grid;
+                gap:3px;
+                padding:10px;
+                background-color:yellow;
+            }
+
+            .grid-column{
+                background-color:rgb(0, 221, 255);
+                color:white;
+                text-align:center;
+                padding:20px;
+                font-size:20px;
+            }
+        
+            .column1{
+                grid-column:1;
+                grid-row:1;
+            }
+            
+            .column2{
+        
+                grid-column:1;
+                grid-row:2;
+                background-color:green;
+            }
+        
+            .column3{
+                grid-column:2/span 3;
+                grid-row:1;
+            }
+        
+            .column4{
+        
+                grid-column:1/span 3;
+                grid-row:3;
+            }
+        
+            .column5{
+        
+                grid-column:3/span 2;
+                grid-row:3;
+                background-color:blue;
+            }
+            .column6{
+                grid-column:2/span 3;
+                grid-row:2;
+            }	
+            </style>
+        
+                <div class="grid-box">
+                    <div class="grid-column column1">COLUMN1</div>
+                    <div class="grid-column column2">COLUMN2</div>
+                    <div class="grid-column column3">COLUMN3</div>
+                    <div class="grid-column column4">COLUMN4</div>
+                    <div class="grid-column column5">COLUMN5</div>
+                    <div class="grid-column column6">COLUMN6</div>
+                </div>
+ 
+
+        </section>
+
         <style>
             
+            #div{
+                height: 100px;
+                width: 100px;
+                background-color: cadetblue;
+                margin: 30px;
+            }
+            #div:hover{
+                cursor: wait;
+                /* transform: scale(1,1.01);  x-axis, y-axix */
+                /* transform: scaleX(1.1); */
+                /* transform: scaleY(1.1); */
+                /* transform: scaleZ(1.1); */
+                /* transform: scale3d(1.1,1.1,1.1); x-axis, y-axis , z-axis */
+                /* transform: rotate(-90deg); 0-360 */
+                /* transform: rotateX(70deg); */
+                /* transform: rotateY(90deg); */
+                /* transform: rotateZ(90deg); */
+            }
 
             #navbar{
                 position: fixed;
@@ -241,7 +337,33 @@
                 display: inline-block;
                 list-style-type: none;
                 padding-right: 20px;
+                cursor: grabbing;
             }
+
+            /* Mouse pointer Styles 
+                cursor: pointer;
+                cursor: text;
+                cursor: auto;
+                cursor: move;
+                cursor: url; want to see
+                cursor: wait;
+                cursor: progress;
+                corsor: zoom-in;
+                cursor: zoom-out;
+                cursor: alias;
+                cursor: help;
+                cursor: all-scroll;
+                cursor: cell;
+                cursor: copy;
+                cursor: no-drop;
+                corsor: n-resize;
+                corsor: e-resize;
+                corsor: ns-resize;
+                corsor: ew-resize;
+                corsor: not-allowed;
+                corsor: grab;
+                corsor: grabbing;
+            */
 
 
             #background{
