@@ -309,7 +309,49 @@
 
         </section>
 
+
+        <section>
+            <h3 style="text-align: center;">Display Flex</h3>
+            <div class="flex-container">
+                <div class="flex-box flex-box1">1</div>
+                <div class="flex-box flex-box2">2</div>
+                <div class="flex-box flex-box3">3</div>
+            </div>
+        </section>
+
         <style>
+
+            .flex-container{
+                height: 100vh;
+                text-align: center;
+                display: flex;
+                align-items: center; 
+                flex-direction:row ; /* row, column, row-reverse, column-reverse */
+                flex-wrap: wrap-reverse; /* nowrap, wrap, wrap-reverse */;
+                justify-content: space-evenly; /* flex-start, flex-end, center, space-between, space-around, space-evenly */  ;
+            }
+
+            .flex-container .flex-box{
+                box-shadow: 18px 21px 134px 7px rgba(43,47,219,0.75);
+                -webkit-box-shadow: 18px 21px 134px 7px rgba(43,47,219,0.75);
+                -moz-box-shadow: 18px 21px 134px -37px rgba(43,47,219,0.75);
+                height: 100px;
+                width: 200px;
+                background: #3fe2fb;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                background: radial-gradient(circle, rgb(173, 181, 33) 10%, rgba(91, 70, 252, 1) 100%);
+            }
+
+            /* .flex-box2{
+                flex-grow: 2;
+            }
+
+            .flex-box3{
+                flex-grow: 3;
+            } */
             
             #div{
                 height: 100px;
@@ -349,7 +391,7 @@
             }
 
             /* Mouse pointer Styles 
-                cursor: pointer;
+                cursor: pointer;    
                 cursor: text;
                 cursor: auto;
                 cursor: move;
@@ -445,6 +487,8 @@
                 right: 10px;
                 visibility: visible;
             }
+
+
         </style>
 </body>
 </html>
