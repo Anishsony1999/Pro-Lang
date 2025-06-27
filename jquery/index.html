@@ -16,7 +16,7 @@
                 <div class="div">4</div>
                 <div class="div">5</div>
                 <div class="div">6</div>
-                <div></div>
+                <div id="anime"></div>
         </div>
 
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, asperiores.<span>hi</span></p>
@@ -43,6 +43,12 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="col vh-100">
+
+                <div class="rounded-5 bg-info position-fixed" id="top" style="width: 50px;height: 50px; bottom: 0;cursor: pointer; right: 0;"> to top</div>
+            </div>
+        </div>
     </div>
 
 
@@ -65,7 +71,7 @@
             // });
             // *,space , > , + , ~ 
 
-            $("div:empty").css("background-color","green");
+            
 
             $("[alt=hi]").css("border","2px dotted red");
 
@@ -128,9 +134,84 @@
                 $("#out").val(x);
             });
 
+
+            // hide();
+            // show();
+            // toggle(); -> hide() show()
+            // animate();
+            // delay();
+            // fadeIn();
+            // fadeOut();
+            // fadeTo();
+            // fadeToggle();
+            // slideDown();
+            // slideUp();
+            // slideToggle();
+            
+            // $('p').on('click',function(){
+            //     $(this).hide('slow'); // fast
+            // });
+
+            // $('.btn').click(function(){
+            //     $('p').toggle(1000);
+            // });
+
+            // hide(speed,callback);
+            // show(speed,callback);
+
+            // toggle(speed,easing,callback);
+            // easing -> 2 val -> [ swing (def),linear ]
+
+            // jQuery Fading Methods
+
+            // fadeOut(speed,callback);
+            // fadeToggle(speed,callback);
+
+            // fadeTo(speed,opacity);
+
+            // $('.btn').click(function(){
+            //     $('p').fadeTo('slow',0.3);
+            // });
+
+            // jQuery Sliding
+
+            // slideDown(); - slideDown(speed,callBack);
+            // slideUp();
+            // slideToggle();
+
+            // $('.btn').click(function(){
+            //     $('p').slideToggle(5000);
+            // });
+
+
+            $("div:empty").css("background-color","green");
+            $("div:empty").css("position","absolute");
+            $("div:empty").css("top","200px");
+
+            // animate({params},speed,callback);
+
+            $(".btn").click(function(){
+                $("div:empty").animate({top:'450px',right:'300px'},2000,function(){
+                    $("div:empty").animate({top:'100px',right:'300px'},2000);
+                });
+            });
+
+            $('#top').click(function(){
+                $("html,body").animate({scrollTop:0},'slow');
+            });
+
+            // setInterval(func(),time);
+
+            setInterval(()=>{
+                $('p').fadeToggle(1000);
+            },2000);
+
         });
     </script>
     <style>
+
+
+
         .row:nth-child(1) div{
             width: 100px;
             height: 100px;

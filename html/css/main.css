@@ -138,13 +138,13 @@ img{
 .fonts{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     /* font-size: 20px; */
-    font-weight: bold;
+    /* font-weight: 800; 100-900 bold */
     color: blue;
-    font-style: oblique;
+    font-style: oblique; 
     text-decoration: none; /* unorderlist, <a> */
-    text-align: center;
-    text-transform: capitalize;
-    /* text-shadow: 20px 20px 5px rgb(205, 64, 64); */
+    text-align: center; /*left, right, justify */
+    text-transform: capitalize; /* uppercase, lowercase, capitalize */
+    text-shadow: 10px 10px 5px rgb(64, 80, 205);
 
     word-spacing: 8px;
     line-height: 20px;
@@ -152,6 +152,30 @@ img{
 }
 
 .fonts p{
-    
     color:pink;
+}
+
+
+#fixed{
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    background-color: aqua;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2;
+}
+
+#fixed2{
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    background-color: rgb(255, 0, 0);
+    border-radius: 50%;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1;
 }

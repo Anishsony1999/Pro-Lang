@@ -127,23 +127,24 @@
         static - done
         relative 
         absolute 
-        fixed
+        fixed 
         sticky
 
+        <div id="fixed">
+            nga
+        </div>
+
+        <div id="fixed2">
+            nga
+        </div>
 
         <section class="section">
             section
             <div class="parent">
-
                 parent
                 <div class="child">
                     child
                 </div>
-            </div>
-
-            <div class="fixed">
-                <i class="bi bi-whatsapp"></i>
-                <!-- <img src="../../img/img1.jpeg" alt=""> -->
             </div>
 
         </section>
@@ -173,29 +174,39 @@
 
         <!-- Display -->
 
-        <h1 style="display: inline-block; height: 200px;width: 300px;"> Display</h1>
+        block
+        inline
+        inline-block
+        none
+        grid
+        flex
+        ect...
+
+        <h1 style="display: inline-block;height: 100px; "> Display</h1>
         <span>same line</span>
 
 
         <section>
 
-            <div style="display: none; height: 200px;"> display none</div>
+            <div style="display:none ; height: 200px;"> display none</div>
             <hr style="border: 2px solid red;">
-            <div style="visibility: hidden;height: 200px;"> visibility hidden</div>
+            <div style="visibility:hidden;height: 200px;"> visibility hidden</div>
             <hr style="border: 2px solid red;">
             
         </section>
 
         <section class="fonts">
             <div style="height: 50px; border: 1px solid silver;overflow: hidden;">
+                <span>this is why red</span>
                 <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, repudiandae!
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam corrupti neque iste aliquid, mollitia esse totam vero nulla odit, facilis nemo non. Quod veniam fuga, ab modi tenetur eaque laborum!
                 </p>
             </div>
-            <span>this is why red</span>
+            
         </section>
 
-        <a href="" style="text-decoration: none;"> link</a>
+        <a href="" style="text-decoration: none;" > this is a link</a>
+        <p style="text-decoration: underline;">this is not a tag</p>
 
         <section>
             <ul class="list">
@@ -367,24 +378,28 @@
                 /* background: ; */
                 /* background-color: aqua; */
                 /* background-image: url("C:/Users/HP/Downloads/download1.jpeg"); */
-                /* background-image: url("../../img/img1.jpeg"); */
-                /* background-repeat: no-repeat; */
-                /* background-size: cover; 50%,70% */
-                /* background-position: center; */
+                background-image: url("../../img/img1.jpeg");
+                background-repeat: no-repeat;
+                background-size: 50%;/* 50%,70%*/
 
-                /* background-attachment: fixed; */
+                background-attachment: fixed; /* fixed, scroll, local */
+
+                background-position: center; /* right, left, center */
                 /* background-position-x: center; right, left, center */
                 /* background-position-y: top; top, bottom, center */
 
                 /* single hander property */
-
-                background: aqua url("../../img/img1.jpeg") no-repeat fixed center ;
+                /* background: aqua url("../../img/img1.jpeg") no-repeat fixed center ; */
             }
 
 
             .list{
-                list-style-type: none;
+                list-style-type: circle; /* disc, circle, square */
                 /* list-style-image: url("../../img/img1.jpeg"); */
+            }
+
+            .list li{
+                text-decoration: underline;
             }
 
             .stick{
@@ -405,7 +420,7 @@
                 height: 300px;
                 width: 300px;
                 background-color: rgb(245, 245, 245);
-                position: relative;
+                /* position: relative; */
             }
             .child{
                 height: 100px;
@@ -413,7 +428,7 @@
                 background-color: rgb(255, 255, 255);
                 position: absolute;
                 top: 0;
-                right: 0;
+                left: 0;
             }
 
             .fixed{
