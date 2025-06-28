@@ -3,223 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <title>Dr Preeti Chhabra - Ayurvedic Consultant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .profile-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .doctor-image {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        .book-btn {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            border: none;
+            border-radius: 15px;
+            padding: 15px 30px;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+            width: 100%;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+        .book-btn:hover {
+            transform: translateY(-2px);
+            color: white;
+        }
+        .info-section {
+            color: #6c757d;
+        }
+        .info-title {
+            color: #4ecdc4;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .info-content {
+            color: #495057;
+            line-height: 1.6;
+        }
+        .doctor-name {
+            color: #495057;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .credentials {
+            color: #4ecdc4;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+        .share-btn {
+            background: none;
+            border: none;
+            color: #4ecdc4;
+            font-size: 1.5rem;
+        }
+        .info-btn {
+            background: none;
+            border: none;
+            color: #6c757d;
+            font-size: 1.2rem;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .nav-tabs {
+            border-bottom: 2px solid #e9ecef;
+            margin-top: 40px;
+        }
+        .nav-tabs .nav-link {
+            border: none;
+            color: #6c757d;
+            font-weight: 500;
+            padding: 15px 20px;
+            border-radius: 0;
+        }
+        .nav-tabs .nav-link.active {
+            background: none;
+            border-bottom: 3px solid #4ecdc4;
+            color: #495057;
+            font-weight: 600;
+        }
+        .bio-section {
+            margin-top: 30px;
+            padding: 20px 0;
+        }
+        .bio-text {
+            color: #6c757d;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #4ecdc4;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
 </head>
-<body class="bg-black text-white">
-
-    <div class="container">
-        <div class="row mt-5 p-3 gap-2 ">
-                <div class="div">1</div>
-                <div class="div">2</div>
-                <div class="div">3</div>
-                <div class="div">4</div>
-                <div class="div">5</div>
-                <div class="div">6</div>
-                <div id="anime"></div>
-        </div>
-
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, asperiores.<span>hi</span></p>
-        <p>Eligendi, culpa aliquam temporibus rerum cumque natus aut ipsum possimus.</p>
-        <p>Accusamus sint odio maxime ut architecto iste alias, nesciunt hic!</p>
-        <p>Iste commodi animi, sapiente fugiat voluptatum deserunt repudiandae! Sunt, iste.</p>
-        <p>Quidem pariatur quam debitis numquam cumque ipsam in fugiat quod.</p>
-        <p style="height: 10px;"></p>
-        <img src="/" alt="hi">
-
-        <div class="row">
-            <div class="col btn btn-info text-center">
-                hide me
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <form action="">
-                    <input type="text" name="name" id="name">
-                    <input type="submit" value="submit">
-                    <input type="text" id="out" >
-                </form>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col vh-100">
-
-                <div class="rounded-5 bg-info position-fixed" id="top" style="width: 50px;height: 50px; bottom: 0;cursor: pointer; right: 0;"> to top</div>
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10 col-xl-8">
+                <div class="profile-card position-relative">
+                    <div class="logo">
+                        <i class="fas fa-leaf"></i> Sehat
+                    </div>
+                    <button class="info-btn">
+                        <i class="fas fa-info-circle"></i>
+                    </button>
+                    
+                    <div class="p-4 p-md-5">
+                        <div class="row">
+                            <div class="col-12 col-md-4 text-center mb-4 mb-md-0">
+                                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=500&fit=crop&crop=face" 
+                                     alt="Dr Preeti Chhabra" class="doctor-image mb-3">
+                                <button class="book-btn">
+                                    <i class="fas fa-calendar-alt me-2"></i>
+                                    Book Appointment
+                                </button>
+                            </div>
+                            
+                            <div class="col-12 col-md-8">
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <h1 class="doctor-name mb-0">DR Preeti Chhabra</h1>
+                                    <button class="share-btn">
+                                        <i class="fas fa-share-alt"></i>
+                                    </button>
+                                </div>
+                                
+                                <p class="credentials">BAMS,MD (Ayurveda) | 33 YRS. EXP.</p>
+                                
+                                <div class="row">
+                                    <div class="col-12 col-lg-7 mb-4">
+                                        <div class="info-title">
+                                            <i class="fas fa-stethoscope"></i>
+                                            Specialization
+                                        </div>
+                                        <div class="info-content">
+                                            Cardiac, Gynae and Fertility, Neuro, Hormonal Imbalances, PCOD and UT Fibroid, Pre Conception Care, Pre and Post Natal Care, Hypertension
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-12 col-lg-5 mb-4">
+                                        <div class="info-title">
+                                            <i class="fas fa-id-card"></i>
+                                            Registration Number
+                                        </div>
+                                        <div class="info-content">
+                                            DBCP 7613
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-12 col-lg-7 mb-4">
+                                        <div class="info-title">
+                                            <i class="fas fa-rupee-sign"></i>
+                                            Consultation Fee
+                                        </div>
+                                        <div class="info-content">
+                                            <strong>₹ 750 /-</strong>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-12 col-lg-5 mb-4">
+                                        <div class="info-title">
+                                            <i class="fas fa-language"></i>
+                                            Languages
+                                        </div>
+                                        <div class="info-content">
+                                            Hindi, English
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Navigation Tabs -->
+                        <ul class="nav nav-tabs" id="doctorTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="intro-tab" data-bs-toggle="tab" data-bs-target="#intro" type="button" role="tab">
+                                    Doctor's Intro
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="faq-tab" data-bs-toggle="tab" data-bs-target="#faq" type="button" role="tab">
+                                    FAQ's
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab">
+                                    Patient's Review
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="services-tab" data-bs-toggle="tab" data-bs-target="#services" type="button" role="tab">
+                                    Services Offered
+                                </button>
+                            </li>
+                        </ul>
+                        
+                        <!-- Tab Content -->
+                        <div class="tab-content" id="doctorTabsContent">
+                            <div class="tab-pane fade show active bio-section" id="intro" role="tabpanel">
+                                <p class="bio-text">
+                                    Senior Ayurvedic Consultant with 29 years of experience and visiting consultant at Sir Ganagaram Hospital, Delhi. Dr. Preeti Chhabra lectured at CME and held various workshops for his colleagues. She participated in various seminars in Japan and abroad as a speaker, lecturer, and speaker. It aired on many TV channels and addressed many health issues. She has also written over 100 articles for health magazines and a column for the Times of India. She was awarded as the title of Pranacharya and the Best Ayurvedic Doctor.
+                                </p>
+                            </div>
+                            <div class="tab-pane fade bio-section" id="faq" role="tabpanel">
+                                <p class="bio-text">FAQ content will be displayed here.</p>
+                            </div>
+                            <div class="tab-pane fade bio-section" id="reviews" role="tabpanel">
+                                <p class="bio-text">Patient reviews will be displayed here.</p>
+                            </div>
+                            <div class="tab-pane fade bio-section" id="services" role="tabpanel">
+                                <p class="bio-text">Services offered will be displayed here.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-
-    <script>
-        $(document).ready(function(){
-
-            $(".div:nth-child(2)").hover(function(){
-                $(".btn").css("background-color","blue");
-            });
-
-            $(".div:nth-last-child(6)").hover(function(){
-                $(".btn").css("background-color","red");
-            });
-
-            // $("p:nth-of-type(2)").hover(function(){
-            //     $("p").css("background-color","green");
-            // });
-            // *,space , > , + , ~ 
-
-            
-
-            $("[alt=hi]").css("border","2px dotted red");
-
-
-
-            // Events
-
-            // mouse events             
-                // 1, click
-                // 2, dblclick
-                // 3, mouseenter
-                // 4, mouseleave
-                // 5, mouseover
-                // 6, mouseout
-
-            // keyboard events
-                // 1, keydown
-                // 2, keyup
-                // 3, keypress
-
-            // form events
-                // 1, change
-                // 2, submit
-                // 3, focus
-                // 4, blur
-
-            // document events
-                // 1, ready
-                // 2, scroll
-                // 3, resize
-                // 4, load
-                // 5, unload
-
-
-            // $("p").mouseleave(function(){
-            //     $(this).css("color","yellow");
-            // });
-
-            // $("p").mouseenter(function(){
-            //     $(this).css("color","red");
-            // });
-
-            // on() method
-
-            $("p").on('click',function(){ // $("p").click(function(){
-                $(this).css("color","yellow");
-            });
-
-            $("p").on({
-                mouseenter:function(){
-                    $(this).css("color","red");
-                },
-                mouseleave:function(){
-                    $(this).css("color","green");
-                }
-            });
-
-            $("#name").keyup(function(){
-                let x = $(this).val(); // val() is help to read the valuses of the input field
-                $("#out").val(x);
-            });
-
-
-            // hide();
-            // show();
-            // toggle(); -> hide() show()
-            // animate();
-            // delay();
-            // fadeIn();
-            // fadeOut();
-            // fadeTo();
-            // fadeToggle();
-            // slideDown();
-            // slideUp();
-            // slideToggle();
-            
-            // $('p').on('click',function(){
-            //     $(this).hide('slow'); // fast
-            // });
-
-            // $('.btn').click(function(){
-            //     $('p').toggle(1000);
-            // });
-
-            // hide(speed,callback);
-            // show(speed,callback);
-
-            // toggle(speed,easing,callback);
-            // easing -> 2 val -> [ swing (def),linear ]
-
-            // jQuery Fading Methods
-
-            // fadeOut(speed,callback);
-            // fadeToggle(speed,callback);
-
-            // fadeTo(speed,opacity);
-
-            // $('.btn').click(function(){
-            //     $('p').fadeTo('slow',0.3);
-            // });
-
-            // jQuery Sliding
-
-            // slideDown(); - slideDown(speed,callBack);
-            // slideUp();
-            // slideToggle();
-
-            // $('.btn').click(function(){
-            //     $('p').slideToggle(5000);
-            // });
-
-
-            $("div:empty").css("background-color","green");
-            $("div:empty").css("position","absolute");
-            $("div:empty").css("top","200px");
-
-            // animate({params},speed,callback);
-
-            $(".btn").click(function(){
-                $("div:empty").animate({top:'450px',right:'300px'},2000,function(){
-                    $("div:empty").animate({top:'100px',right:'300px'},2000);
-                });
-            });
-
-            $('#top').click(function(){
-                $("html,body").animate({scrollTop:0},'slow');
-            });
-
-            // setInterval(func(),time);
-
-            setInterval(()=>{
-                $('p').fadeToggle(1000);
-            },2000);
-
-        });
-    </script>
-    <style>
-
-
-
-        .row:nth-child(1) div{
-            width: 100px;
-            height: 100px;
-            background-color: aqua;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
