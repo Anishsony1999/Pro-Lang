@@ -68,3 +68,25 @@ num = bool("False")
 print(num)
 
 x = str(10) 
+
+
+# if condition:
+    # if condition:
+
+    # else:
+
+x = 20
+
+if x > 5:
+    if x > 7 :
+        print("x is greater than 7")
+        if x > 10 :
+            print("x is greater than 10")
+        elif x == 10 :
+            print("x is equal to 10")
+        else:
+            print("x is less than 10")
+    else:
+        print("x is less than 7")
+else:
+    print("x is less than 5")
