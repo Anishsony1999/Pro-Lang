@@ -1,928 +1,353 @@
-   
-   <style>
-    /* Custom styles to match the target design */
-    .doctor-card {
-        border-radius: 15px;
-        padding: 20px;
-        text-align: center;
-        background-color: #fff;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        height: 100%;
-        transition: transform 0.3s;
-    }
-    
-    a:visited {
-        color:#fff;
-    }
-    
-    .doctor-card:hover {
-        transform: translateY(-5px);
-    }
-    
-    .doctor-image-wrapper {
-        width: 150px;
-        height: 147px;
-        border-radius: 50%;
-        border: 4px solid #30b4c5;
-        margin: 0 auto 15px;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .doctor-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
-    .doctor-name {
-        color: #30b4c5;
-        font-size: 1.3rem;
-        margin-bottom: 5px;
-    }
-    
-    .doctor-qualification {
-        color: #666;
-        margin-bottom: 5px;
-    }
-    
-    .doctor-experience {
-        color: #666;
-        margin-bottom: 15px;
-    }
-    
-    .book-now-btn {
-        background-color: #0071ef;
-        border: none;
-        padding: 8px 25px;
-        border-radius: 5px;
-        color: white;
-        font-weight: 500;
-        transition: all 0.3s;
-        width: 100%;
-    }
-    
-    .book-now-btn:hover {
-        background-color: #2798a8;
-    }
-    
-    .carousel-indicators {
-        bottom: -50px;
-    }
-    
-    .carousel-indicators button {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: #ccc;
-        margin: 0 5px;
-    }
-    
-    .carousel-indicators .active {
-        background-color: #777;
-    }
-    
-    #doctorCarousel {
-        padding-bottom: 50px;
-    }
-    
-    .carousel-control-prev, .carousel-control-next {
-        width: 40px;
-        height: 40px;
-        background-color: rgba(0,0,0,0.2);
-        border-radius: 50%;
-        top: 50%;
-        transform: translateY(-50%);
-        opacity: 0.8;
-    }
-    
-    .carousel-control-prev {
-        left: 10px;
-    }
-    
-    .carousel-control-next {
-        right: 10px;
-    }
-    
-    .carousel-control-prev:hover, .carousel-control-next:hover {
-        opacity: 1;
-    }
-</style>
-   
-   
-   <style>
-   .banner-section{
-       background-image: url(assets/web/images/banner/1.jpg);
-   }
-          @media (width: 768px) {
-           .doctors-section{
-               margin-top:20px;
-           }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Review - Dr Preeti Chhabra</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-      @media (max-width: 600px) {
-    .doctors-section {
-        margin-top: 10px;
-    }
+        .review-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .doctor-image {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .submit-btn {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            border: none;
+            border-radius: 15px;
+            padding: 15px 40px;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+            transition: transform 0.2s;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            color: white;
+        }
+        .submit-btn:disabled {
+            background: #6c757d;
+            transform: none;
+        }
+        .form-label {
+            color: #495057;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .form-control, .form-select {
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            padding: 12px 15px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: #4ecdc4;
+            box-shadow: 0 0 0 0.2rem rgba(78, 205, 196, 0.25);
+        }
+        .doctor-name {
+            color: #495057;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .credentials {
+            color: #4ecdc4;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        .logo {
+            color: #4ecdc4;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        .star-rating {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+        .star {
+            font-size: 2rem;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .star:hover,
+        .star.active {
+            color: #ffc107;
+        }
+        .rating-label {
+            margin-left: 15px;
+            color: #6c757d;
+            font-weight: 500;
+            align-self: center;
+        }
+        .required {
+            color: #dc3545;
+        }
+        .back-btn {
+            background: none;
+            border: 2px solid #4ecdc4;
+            color: #4ecdc4;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .back-btn:hover {
+            background: #4ecdc4;
+            color: white;
+        }
+        .review-header {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin: -20px -20px 30px -20px;
+        }
+        .alert-success {
+            border-radius: 15px;
+            border: none;
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8 col-xl-6">
+                <div class="review-card">
+                    <div class="p-4 p-md-5">
+                        <div class="review-header">
+                            <h2 class="mb-3">Share Your Experience</h2>
+                            <p class="mb-0">Help others by sharing your experience with Dr. Preeti Chhabra</p>
+                        </div>
 
-    #appointment {
-       position:relative;
-       left: -100px; /* Align to the left */
-      width:1500px;
-    }
-    #doctor-form{
-        width:100%;
-    }
-}
-/* Ensure the wrapper container is responsive */
-.recaptcha-container {
-    width: 100%;
-    max-width: 500px; /* You can adjust this as needed */
-    margin: 0 auto; /* Centers the container */
-}
+                        <!-- Doctor Info Section -->
+                        <div class="text-center mb-4">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&crop=face" 
+                                 alt="Dr Preeti Chhabra" class="doctor-image mb-3">
+                            <h3 class="doctor-name">DR Preeti Chhabra</h3>
+                            <p class="credentials">BAMS,MD (Ayurveda) | 33 YRS. EXP.</p>
+                        </div>
 
+                        <!-- Success Message (Hidden by default) -->
+                        <div class="alert alert-success d-none" id="successMessage">
+                            <i class="fas fa-check-circle me-2"></i>
+                            Thank you for your review! Your feedback has been submitted successfully.
+                        </div>
 
-.g-recaptcha {
-    width: 100% !important;
-    transform: scale(0.9); 
-    transform-origin: 0 0; 
-}
-
-#doctor-form {
-    max-width: 50%;
-    margin-left: auto;
-    margin-right: 0;
-}
-@media (max-width: 900px) {
-    #doctor-form {
-        max-width: 90%;
-        margin-left: 40px;
-        margin-right: 50px;
-    }
-    #form-section {
-        background-image: none;
-    }
-    .doctors-content{
-        margin-top:100px;
-    }
-}
-
-@media (max-width: 600px) {
-    #doctor-form {
-        max-width: 90%; 
-        margin-left:125px;
-         margin-right:50px;
-        
-    }
-    #appointment {
-        width: 100%; /* Stretch to full width */
-    }
-      #form-section {
-        background-image: none; /* Hide the background image on mobile */
-    }
-
-       #success-message {
-        font-size: 15px !important; 
-        text-align: center; 
-        /*margin-top: 20px !important; */
-        top: auto !important; /* Override top inline style */
-        display: block !important; /* Ensure it's visible if needed */
-    }
-    #doctor-form.success-visible {
-        max-height: 0px !important; /* Reduced height */
-        min-height: 0px !important;
-        background-color: transparent;
-    }
-
-    #doctor-form {
-        transition: max-height 0.3s ease-in-out; /* Smooth transition for the height change */
-    }
-    .arrow span {
-        width: 6vw;
-        height: 6vw;
-    }
-    .arrow-right span {
-        width: 6vw;
-        height: 6vw;
-    }
-    .banner-section{
-       background-image: url(assets/web/images/banner/banner.jpg);
-        background-position: 29% 41px;
-   }
-   .hearder-banner h1 {
-       position:relative;
-       top:100px;
-   }
-   .hearder-banner a {
-       position:relative;
-       top:100px;
-   }
-   .doctors-content{
-        margin-top:-20px;
-    }
-}
-
-/* Flash message styling */
-.alert-success {
-  position: relative;
-  text-align: right; /* Align text to the right */
-  padding: 15px;
-  border-radius: 5px;
-}
-
-/* Container for form */
-
-.section-description {
-  text-align: justify;
-}
-#success-message {
-  width: 50%; /* Adjust width as needed */
-  float:right;
-  margin-top:-60px;
-  margin-right:20px;
-  font-size:26px;
-  padding-left:100px;
-  font-weight:bold;
-  background-color: transparent;
-   border: none;
-}
-#error-message{
-     width: 50%; /* Adjust width as needed */
-  float:right;
-  margin-top:-50px;
-  margin-right:20px;
- 
-}
-   </style>
-    <!-- ==========Banner Section Start Here========== -->
-    <section class="banner-section" >
-        <div class="container">
-            <div class="banner-wrapper">
-                <div class="banner-content hearder-banner">
-                    <h1 class="wow fadeInLeft"style="color:white" data-wow-duration="2s" data-wow-delay=".1s">Doctors To Consult Online...</h1>
-                    <a href="<?=base_url('doctor-login')?>" class="lab-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s"><span>Login <i class="icofont-rounded-double-right"></i></span></a>
-                    
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ==========Banner Section Ends Here========== -->
-
-
-    <!-- ==========Feature Section Start Here========== -->
-     <a id="lession1"></a>
-    <section class="feature-section padding-tb bg-color" style="padding:65px;">
-       
-        <div class="container">
-            <div class="feature-section-wrapper">
-                <div class="section-header wow fadeInUp" data-wow-delay="" data-wow-duration="1s">
-                    <h2><span>We Offer Specialized Service</span> </h2>
-                    <h2> Doctors To Meet Your Needs</h2>
-                </div>
-                <div class="section-content">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-12">
-                            <div class="lab-item feature-item wow fadeInLeft" data-wow-delay=".2s"
-                                data-wow-duration="1s">
-                                <div class="lab-inner text-center">
-                                    <div class="lab-thumb">
-                                       <img src="<?=base_url('assets/web/images/feature/1.png')?>" style="height :60px;">
-                                    </div>
-                                    <div class="lab-content">
-                                        <h4 text-align: center>Online Consultation</h4>
-                                        <p style="text-align: justify;">Every time you go to visit your doctor, you have to travel to get there. With an online consultation,
-                                        you don’t need to wait for the bus or get gas for your car. You simply go on the internet and begin your consultation.
-                                        </p>
-                                        <!--<a href="#" class=""><span>Read More <i-->
-                                        <!--            class="icofont-rounded-double-right"></i></span></a>-->
-                                    </div>
+                        <!-- Review Form -->
+                        <form id="reviewForm">
+                            <div class="row">
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="patientName" class="form-label">
+                                        Full Name <span class="required">*</span>
+                                    </label>
+                                    <input type="text" class="form-control" id="patientName" required>
+                                </div>
+                                
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="patientEmail" class="form-label">
+                                        Email Address <span class="required">*</span>
+                                    </label>
+                                    <input type="email" class="form-control" id="patientEmail" required>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-12">
-                            <div class="lab-item feature-item wow fadeInUp" data-wow-delay=".2s" data-wow-duration="1s">
-                                <div class="lab-inner text-center">
-                                    <div class="lab-thumb">
-                                        <img src="<?=base_url('assets/web/images/feature/2.png')?>" alt="feature img" style="height :60px;">
-                                    </div>
-                                    <div class="lab-content">
-                                        <h4 style="margin-top:25px; text-align: center">Online Prescription</h4>Our Doctors
-                                        <p style="text-align: justify;">There are often occasions when you can get your prescription with just an online consultation or medical advice with a doctor.
-                                        In particular, contraceptives and many types of allergy medication can be prescribed by a doctor from online.
-                                        </p>
-                                    </div>
+
+                            <div class="row">
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="patientGender" class="form-label">
+                                        Gender <span class="required">*</span>
+                                    </label>
+                                    <select class="form-select" id="patientGender" required>
+                                        <option value="">Select Gender</option>
+                                        <option value="female">Female</option>
+                                        <option value="male">Male</option>
+                                        <option value="other">Other</option>
+                                        <option value="prefer-not-to-say">Prefer not to say</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="patientPhone" class="form-label">
+                                        Phone Number <span class="required">*</span>
+                                    </label>
+                                    <input type="tel" class="form-control" id="patientPhone" 
+                                           placeholder="+91 XXXXX XXXXX" required>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-12">
-                            <div class="lab-item feature-item wow fadeInUp" data-wow-delay=".2s" data-wow-duration="1s">
-                                <div class="lab-inner text-center">
-                                    <div class="lab-thumb">
-                                        <img src="<?=base_url('assets/web/images/feature/3.png')?>" alt="feature img" style="height :60px;">
+
+                            <div class="mb-4">
+                                <label class="form-label">
+                                    Rate Your Experience <span class="required">*</span>
+                                </label>
+                                <div class="d-flex align-items-center">
+                                    <div class="star-rating" id="starRating">
+                                        <i class="fas fa-star star" data-rating="1"></i>
+                                        <i class="fas fa-star star" data-rating="2"></i>
+                                        <i class="fas fa-star star" data-rating="3"></i>
+                                        <i class="fas fa-star star" data-rating="4"></i>
+                                        <i class="fas fa-star star" data-rating="5"></i>
                                     </div>
-                                    <div class="lab-content">
-                                        <h4 style="margin-top:25px; text-align: center">Audio & video consultation</h4>
-                                        <p style="text-align: justify;">Here we are offering 2 Consultation modes to the patient to exchange health data information via  Audio and Video Consultation to get
-                                        a medical assistant. 
-                                        </p>
-                                    </div>
+                                    <span class="rating-label" id="ratingLabel">Click to rate</span>
                                 </div>
+                                <input type="hidden" id="rating" required>
                             </div>
-                        </div>
-                      
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-12">
-                            <div class="lab-item feature-item wow fadeInRight" data-wow-delay=".2s"
-                                data-wow-duration="1s">
-                                <div class="lab-inner text-center">
-                                    <div class="lab-thumb">
-                                        <img src="<?=base_url('assets/web/images/feature/4.png')?>" alt="feature img" style="height :70px;">
-                                    </div>
-                                    <div class="lab-content">
-                                        <h4 style="margin-top:25px; text-align: center">Medicine Delivery</h4>
-                                        <p style="text-align: justify;">Medicine delivery must enable all citizens to access health care services, and the services must be cost-effective and meet certain established standards of quality.
-                                        </p>
-                                    </div>
-                                </div>
+
+                            <div class="mb-4">
+                                <label for="reviewText" class="form-label">
+                                    Your Review <span class="required">*</span>
+                                </label>
+                                <textarea class="form-control" id="reviewText" rows="5" 
+                                          placeholder="Share your experience with Dr. Preeti Chhabra. How was your consultation? Would you recommend the doctor to others?" 
+                                          required></textarea>
+                                <div class="form-text">Minimum 50 characters required</div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ==========Feature Section Ends Here========== -->
 
-    <!-- ==========Counter Section Start Here========== -->
-    <div class="counter-section style-1 padding-60">
-        <div class="container">
-            <div class="section-wrapper">
-                <div class="counter-item wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".1s">
-                    <div class="counter-item-inner">
-                        <div class="counter-thumb">
-                            <img src="<?=base_url('assets/web/images/counter/01.png')?>" alt="counter">
-                        </div>
-                        <div class="counter-content">
-                            <h3 class="number"><span class="counter">50</span></h3>
-                            <p class="post-content">Patients Every Day</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="counter-item wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s">
-                    <div class="counter-item-inner">
-                        <div class="counter-thumb">
-                            <img src="<?=base_url('assets/web/images/counter/02.png')?>" alt="counter">
-                        </div>
-                        <div class="counter-content">
-                            <h3 class="number"><span class="counter">50</span></h3>
-                            <p class="post-content">Enrolled Doctors</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="counter-item wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
-                    <div class="counter-item-inner">
-                        <div class="counter-thumb">
-                            <img src="<?=base_url('assets/web/images/counter/03.png')?>" alt="counter">
-                        </div>
-                        <div class="counter-content">
-                            <h3 class="number"><span class="counter">5</span></h3>
-                            <p class="post-content">Years Experience</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="counter-item wow fadeInRight" data-wow-duration="1s" data-wow-delay=".4s">
-                    <div class="counter-item-inner">
-                        <div class="counter-thumb">
-                            <img src="<?=base_url('assets/web/images/counter/04.png')?>" alt="counter" style="height:67px;">
-                        </div>
-                        <div class="counter-content">
-                            <h3 class="number"><span class="counter">80</span></h3>
-                            <p class="post-content">Delivery all over<br> the world</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <a id="lession3"></a>
-    <!-- ==========Counter Section Ends Here========== -->
-    
-    <div class="p-3 mt-5">
-        <h2 class="text-center">Our Doctors</h2>
-    </div>
-
-        <div id="doctorCarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <?php 
-                $count = 0; // Counter for tracking items
-                $total = count($details);
-        
-                foreach ($details as $doc) {
-                    // Open a new carousel item every 4 doctors
-                    if ($count % 4 == 0) {
-                        echo '<div class="carousel-item' . ($count == 0 ? ' active' : '') . '">';
-                        echo '<div class="container w-100 d-block">';
-                        echo '<div class="row">';
-                    }
-                ?>
-                    <div class="col-md-3 col-sm-6 mb-4">
-                        <div class="doctor-card">
-                            <a href="<?= base_url('Web/doctor_detail/'. $doc->doctor_id) ?>" >
-                            <div class="doctor-image-wrapper">
-                                <img src="<?php echo $doc->profile_photo ?? 'uploads/doctor/noprofile.png'; ?>" alt="<?php echo $doc->display_name; ?>" class="doctor-image">
-                            </div>
-                            <h3 class="doctor-name"><?php echo $doc->display_name; ?></h3>
-                            <p class="doctor-qualification"><?php echo $doc->specialization; ?></p>
-                            <p class="doctor-experience">Experience: <?php echo isset($doc->experience) ? $doc->experience : '10'; ?> Years</p>
-                            </a>
-                            <a href="<?= base_url('Invite_Patient/invitation_submit/'. $doc->doctor_id .'/'.str_replace(" ","-",$doc->full_name)) ?>" class="btn book-now-btn">
-                                Book Now
-                            </a>
-                        </div>
-                    </div>
-                <?php 
-                    $count++;
-        
-                    // Close the row and carousel-item after every 4 doctors or at the end
-                    if ($count % 4 == 0 || $count == $total) {
-                        echo '</div>'; // Close row
-                        echo '</div>'; // Close container
-                        echo '</div>'; // Close carousel-item
-                    }
-                } 
-                ?>
-            </div>
-        
-            <!-- Carousel Controls -->
-            <a class="carousel-control-prev" href="#doctorCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#doctorCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-            
-            <!-- Carousel Indicators -->
-            <!--<div class="carousel-indicators">-->
-                <?php
-                // $slides = ceil($total / 4);
-                // for ($i = 0; $i < $slides; $i++) {
-                //     echo '<button type="button" data-bs-target="#doctorCarousel" data-bs-slide-to="' . $i . '"' . 
-                //          ($i == 0 ? ' class="active" aria-current="true"' : '') . ' aria-label="Slide ' . ($i + 1) . '"></button>';
-                // }
-                ?>
-            <!--</div>-->
-        </div>
-
-<!-- Mobile Carousel -->
-<div id="mobileCarouselControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-        <?php 
-        $count = 0; // Reset counter for mobile carousel
-
-        foreach ($details as $doc) {
-            echo '<div class="carousel-item' . ($count == 0 ? ' active' : '') . '">';
-            echo '<div class="container w-100 d-block">';
-            echo '<div class="row">';
-        ?>
-            <div class="col-lg-6 col-sm-12">
-                <div class="col d-flex m-2">
-                    <div>
-                        <img src="<?php echo $doc->profile_photo; ?>" alt="" style="height: 100px;">
-                    </div>
-                    <div class="px-4">
-                        <input type="hidden" name="doctor_id" value="<?php echo $doc -> doctor_id ?>">
-                        <h4><?php echo $doc->display_name; ?></h4>
-                        <span><?php echo $doc->specialization; ?></span><br>
-                        <!--<span>25 years experience overall</span><br>-->
-                        <b><?php echo $doc->land_mark; ?></b>
-                        <p class="my-2">&#8377;300 Consultation fee at clinic</p>
-                        <div>
-                            <div class="cussonLine"></div>
-                            <div class="mt-3">
-                                <span class="badge badge-light bg-success text-white">
-                                    <i class="fa-solid fa-thumbs-up"></i> 89%
-                                </span>
-                                <b><u>9 Patient Stories</u></b>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col justify-content-end align-items-end d-flex">
-                    <div>
-                        <div class="text-success text-center m-2" style="font-size: 14px;">
-                            <!--<i class="fa-solid fa-calendar-days"></i>-->
-                            <!--<label>Available Today</label>-->
-                        </div>
-                        <div class="btn-self text-center px-5 py-0">
-                            <div>
-                                <a href="">
-                                    Book to Visit
-                                    <span style="font-size: 12px;">no booking fee</span>
+                            <div class="d-flex gap-3 justify-content-between">
+                                <a href="#" class="back-btn">
+                                    <i class="fas fa-arrow-left me-2"></i>
+                                    Back to Profile
                                 </a>
+                                <button type="submit" class="submit-btn" id="submitBtn">
+                                    <i class="fas fa-paper-plane me-2"></i>
+                                    Submit Review
+                                </button>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
-        <?php 
-            echo '</div>'; // Close the row
-            echo '</div>'; // Close the container
-            echo '</div>'; // Close the carousel-item
-            $count++;
-        } 
-        ?>
+        </div>
     </div>
 
-    <!-- Carousel Controls -->
-    <a class="carousel-control-prev" href="#mobileCarouselControls" role="button" data-slide="prev" style="width:70px">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#mobileCarouselControls" role="button" data-slide="next" style="width:70px">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Star Rating Functionality
+        const stars = document.querySelectorAll('.star');
+        const ratingInput = document.getElementById('rating');
+        const ratingLabel = document.getElementById('ratingLabel');
+        let currentRating = 0;
 
+        const ratingTexts = {
+            1: 'Poor',
+            2: 'Fair', 
+            3: 'Good',
+            4: 'Very Good',
+            5: 'Excellent'
+        };
 
-<!--=============== Bootstrap  Model ====================-->
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                currentRating = parseInt(this.dataset.rating);
+                ratingInput.value = currentRating;
+                updateStars();
+                ratingLabel.textContent = ratingTexts[currentRating];
+            });
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form id="inviteForm">
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Enter Your Email:</label>
-            <input type="text" class="form-control" id="recipient-name" required>
-          </div>
-          <input type="hidden" id="doctor-id" value="">
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="sendRequestBtn">Send Request</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-        
-
-    <!-- ==========Appointment Section Start Here========== -->
-  <section id="form-section" class="appointment-section style-1">
-  <div id="appointment">
-      <!-- Error and success messages from AJAX response -->
-      
-      <!-- Display the form if no success message or error exists -->
-      <form method="POST" id="doctor-form" action="" enctype="multipart/form-data" class="bg-white p-4 rounded shadow-sm" style="min-height: 800px;" novalidate>
-          <div class="form-row">
-            <div class="text-center w-100 mb-4">
-              <h2>Doctor's Registration</h2>
-            </div>
-
-            <!-- Full Name -->
-            <div class="form-group col-12">
-              <label for="full_name">Full Name <span style="color: red;">*</span></label>
-              <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Enter full name" value="<?= isset($form_data['full_name']) ? $form_data['full_name'] : '' ?>">
-              <div id="errormsg" class="text-danger" style="display:none;"></div>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-6 col-12">
-              <label for="doctor_reg_no">Doctor Registration Number</label>
-              <input type="text" class="form-control" id="doctor_reg_no" name="doctor_reg_no" placeholder="Enter registration number" value="<?= isset($form_data['doctor_reg_no']) ? $form_data['doctor_reg_no'] : '' ?>">
-             <div id="regerrormsg" class="text-danger" style="display:none;"></div>
-            </div>
-            <div class="form-group col-md-6 col-12">
-              <label for="specialization">Specialization</label>
-              <input type="text" class="form-control" id="specialization" name="specialization" placeholder="Enter specialization" value="<?= isset($form_data['specialization']) ? $form_data['specialization'] : '' ?>">
-               <div id="specialerrormsg" class="text-danger" style="display:none;"></div>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-6 col-12">
-              <label for="contact_number1">Contact Number <span style="color: red;">*</span></label>
-             <!-- <input type="tel" class="form-control" id="contact_number1" name="contact_number1" placeholder="Enter contact number" value="<?= isset($form_data['contact_number1']) ? $form_data['contact_number1'] : '' ?>">-->
-             <!--<div id="contacterrormsg" class="text-danger" style="display:none;"></div>-->
-             <input type="tel" class="form-control" id="contact_number1" name="contact_number1"
-       placeholder="Enter contact number"
-       value="<?= isset($form_data['contact_number1']) ? $form_data['contact_number1'] : '' ?>">
-<div id="contacterrormsg" class="text-danger" style="display:none;"></div>
-            </div>
-            <div class="form-group col-md-6 col-12">
-              <label for="email">Email Address <span style="color: red;">*</span></label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" value="<?= isset($form_data['email']) ? $form_data['email'] : '' ?>">
-              <div id="emailerrormsg" class="text-danger" style="display:none;"></div>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-6 col-12">
-              <label for="hospital_name">Hospital Name</label>
-              <input type="text" class="form-control" id="hospital_name" name="hospital_name" placeholder="Enter hospital name" value="<?= isset($form_data['hospital_name']) ? $form_data['hospital_name'] : '' ?>">
-             <div id="hospitalerrormsg" class="text-danger" style="display:none;"></div>
-            </div>
-            <div class="form-group col-md-6 col-12">
-              <label for="address">Address</label>
-              <input type="text" class="form-control" id="address" name="address" placeholder="Enter address" value="<?= isset($form_data['address']) ? $form_data['address'] : '' ?>">
-             <div id="addresserrormsg" class="text-danger" style="display:none;"></div>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-6 col-12">
-              <label for="state">State</label>
-              <input type="text" class="form-control" id="state" name="state" placeholder="Enter state" value="<?= isset($form_data['state']) ? $form_data['state'] : '' ?>">
-              <div id="stateerrormsg" class="text-danger" style="display:none;"></div>
-            </div>
-            <div class="form-group col-md-6 col-12">
-              <label for="zip_code">Zip Code</label>
-              <input type="text" class="form-control" id="zip_code" name="zip_code" placeholder="Enter zip code" value="<?= isset($form_data['zip_code']) ? $form_data['zip_code'] : '' ?>">
-              <div id="ziperrormsg" class="text-danger" style="display:none;"></div>
-            </div>
-          </div>
-
-          <div class="g-recaptcha mb-3" data-sitekey="6LcbN7gqAAAAAFkCv8HcRy4gGE5AWJTN2SpcVtbl"></div>
-          <button type="submit" class="btn btn-primary w-100 mt-3">Submit</button>
-         
-
-          <div id="message" class="message-popup"></div>
-         
-      </form>
-  </div>
-   
-</section>
-
- <div id="error-message" class="col-6 alert alert-danger text-center" style="display:none;"></div>
-      <div id="success-message" class="col-6 alert alert-success text-center" style="display:none; top:-500px"></div>
-    <!-- ==========Appointment Section Ends Here========== -->
-    
-        
- <!--=========================== meet our dotcors section start=========================-->
- <section class="doctors-section pb-0">
-        <!--<div class="container">-->
-            <div class="doctors-content container row">
-                
-               
-                <div class="col-md-6 col-sm-12">
-                 
-                    <!--<h3 class="section-subtitle">Doctors</h3>-->
-                    <h2 class="section-title">Meet our Doctors</h2>
-                    <p class="section-description">Our doctor is a highly skilled and compassionate healthcare professional dedicated to providing exceptional care. With years of experience, they are committed to improving the lives of patients through personalized treatment and attention to detail.</p>
-                    <p class="section-description">Known for their patient-centric approach, they ensure every individual receives the highest quality of care in a comfortable and welcoming environment. Whether you’re seeking preventative care, treatment for a specific condition, or guidance for a healthier lifestyle, our doctor is here to support your journey to optimal health.</p>
-                    <p class="section-description">Your well-being is their priority, and they strive to build lasting relationships based on trust and respect. Visit us today and experience healthcare designed with you in mind!</p>
-                    <!--<a href="#" class="career-button">Join Our Team</a>-->
-                </div>
-    <div class="doctors-grid col-md-6 col-sm-12">
-                    <div class="doctor-card">
-                        <img src="<?=base_url('assets/web/images/team/meet_our_doctor.jpg')?>" alt="Dr. John Doe">
-                    </div>
-                    
-                </div>
-            </div>
-        <!--</div>-->
-    </section>
- <!--=========================== meet our dotcors section end=========================-->
- 
- 
-      <a id="lession2"></a>
-    <section class="website">
-        <div class="">
-        <h2 class="text-center" >Deliver Medicine Online</h2>
-        <h2 class="text-center"><img src="https://gspedia.com/projects/pharmayush/web/images/pharma-logo.png"></h2>
-        </div>
-        <div class="container-fluid mt-3 mb-3">
-            <div class="row">
-                <div class="col-6 border">
-                    <a href="https://pharmayush.com" target="_blank" class="d-flex">
-                    <img src="https://i.pinimg.com/1200x/6c/97/2e/6c972e4ae3a16cd71b92722d063f8989.jpg" width="50%">
-                    <div>
-                    <h3>Click here to Visit our Web site</h3>
-                    <span class="float-right">
-                        <!--<i class="icofont-long-arrow-left" style="font-size:150px"></i>-->
-                        <div class="arrow">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </span>
-                    </div>
-                    </a>
-                </div>
-                <div class="col-6 d-flex border">
-                    <a href="https://play.google.com/store/apps/details?id=com.suffix.pharmayush&hl=en&gl=US" target="_blank" class="d-flex">
-                    <div>
-                    <h3>Click here to download Mobile app</h3>
-                    <span>
-                        <!--<i class="icofont-long-arrow-right" style="font-size:150px"></i>-->
-                        <div class="arrow-right">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </span>
-                    </div>
-                    <img src="<?=base_url('assets/pharmayushimage.jpg')?>" width="50%">
-                    </a>
-                </div>
-            </div>
-            
-        </div>
-       
-    </section>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script>
-  // jQuery for handling AJAX form submission
-$('#doctor-form').submit(function (e) {
-    e.preventDefault();
-
-    // Clear previous messages
-    $('#success-message').hide();
-    $('#error-message').hide();
-
-   
-     let formData = new FormData(this);
-
-    // Perform validation
-    if (!validateForm(formData)) {
-        return; // Stop further execution if validation fails
-    }
-
-    $.ajax({
-        url: '<?= base_url('Api/newdoctor1') ?>',
-        type: 'POST',
-        data: formData,
-        processData: false,
-        contentType: false,
-        success: function (response) {
-            response = JSON.parse(response);
-
-            // Handle success or error
-            if (response.status === 'success') {
-                // Show success message and hide form
-                 document.querySelector('#doctor-form').classList.add('success-visible');
-                $('#success-message').html(response.message).show();
-                $('#doctor-form').empty();
-               
-            } else {
-                // Show error message
-                $('#error-message').html(response.message).show();
-
-                // Fill the form fields with previous data
-                $.each(response.form_data, function (key, value) {
-                    $('#' + key).val(value);
-                });
-            }
-        },
-        error: function () {
-            alert('An error occurred. Please try again.');
-        }
-    });
-});
-   function validateForm(formData) {
-    const fullName = formData.get('full_name');
-    const contactNumber = formData.get('contact_number1');
-    const email = formData.get('email');
-    const state = formData.get('state');
-    const zipCode = formData.get('zip_code');
-
-    const error = document.getElementById('errormsg');
-    const contactNumberError = document.getElementById('contacterrormsg');
-    const emailError = document.getElementById('emailerrormsg');
-    const stateError = document.getElementById('stateerrormsg');
-    const zipCodeError = document.getElementById('ziperrormsg');
-
-    // Clear previous validation messages
-    clearValidationMessage(error);
-    clearValidationMessage(contactNumberError);
-    clearValidationMessage(emailError);
-    clearValidationMessage(stateError);
-    clearValidationMessage(zipCodeError);
-
-    let isValid = true; // Flag to track if form is valid
-
-    // Validate Full Name
-    if (fullName.trim() === '') {
-        displayValidationError(error, 'Full name is required.');
-        isValid = false;
-    } else if (!/^[A-Za-z\s]+$/.test(fullName)) {
-        displayValidationError(error, 'Full name must contain only letters and spaces.');
-        isValid = false;
-    }
-
-    // Validate Contact Number
-    if (contactNumber.trim() === '') {
-        displayValidationError(contactNumberError, 'Contact number is required.');
-        isValid = false;
-    } else if (!/^[0-9]+$/.test(contactNumber)) {
-        displayValidationError(contactNumberError, 'Contact number must only contain digits.');
-        isValid = false;
-    } else if (contactNumber.length < 8 || contactNumber.length > 14) {
-        displayValidationError(contactNumberError, 'Contact number must be between 8 to 14 digits.');
-        isValid = false;
-    }
-
-    // Validate Email
-    if (email.trim() === '') {
-        displayValidationError(emailError, 'Email address is required.');
-        isValid = false;
-    } else {
-        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|net|org|edu|gov|mil|info|biz|co|in|us|ca|uk|au|io|tech)$/;
-        if (!emailRegex.test(email)) {
-            displayValidationError(emailError, 'Invalid email address. Please enter a valid domain like .com, .net, .org, etc.');
-            isValid = false;
-        }
-    }
-
-    // Validate State
-    if (state.trim() === '') {
-        displayValidationError(stateError, 'State is required.');
-        isValid = false;
-    } else if (!/^[A-Za-z\s]+$/.test(state)) {
-        displayValidationError(stateError, 'State must contain only letters and spaces.');
-        isValid = false;
-    }
-
-    // Validate Zip Code
-    if (zipCode.trim() === '') {
-        displayValidationError(zipCodeError, 'Zip code is required.');
-        isValid = false;
-    } else if (!/^\d{5,10}$/.test(zipCode)) {
-        displayValidationError(zipCodeError, 'Zip code must be a valid number between 5 to 10 digits.');
-        isValid = false;
-    }
-
-    return isValid; // Returns false if any validation fails
-}
-
-function displayValidationError(element, errorMessage) {
-    element.textContent = errorMessage;
-    element.style.display = 'block';
-}
-
-function clearValidationMessage(element) {
-    element.textContent = '';
-    element.style.display = 'none';
-}
-
-
-// Async function to check if email is already registered
-function isValidEmail(email) {
-    return new Promise(function (resolve, reject) {
-        $.ajax({
-            type: 'POST',
-            url: 'check_email_endpoint', // Replace with your actual endpoint
-            data: { email: email },
-            dataType: 'json',
-            success: function (response) {
-                resolve(response.exists); // Email already registered
-            },
-            error: function () {
-                reject();
-            },
+            star.addEventListener('mouseover', function() {
+                const hoverRating = parseInt(this.dataset.rating);
+                highlightStars(hoverRating);
+            });
         });
-    });
-}
-    
-    
 
-</script>
-<script>
-$(document).ready(function () {
-    $('#contact_number1').on('blur', function () {
-        let contact = $(this).val().trim();
-        $('#contacterrormsg').hide().text('');
+        document.getElementById('starRating').addEventListener('mouseleave', function() {
+            updateStars();
+        });
 
-        if (contact.length === 10) {
-            $.ajax({
-                url: "<?= base_url('web/check_contact_ajax_web') ?>",
-                type: "POST",
-                data: { contact_number1: contact },
-                dataType: "json",
-                success: function (response) {
-                    if (response.exists) {
-                        $('#contacterrormsg').text('This number is already registered.').show();
-                    }
-                },
-                error: function () {
-                    $('#contacterrormsg').text('Unable to verify number. Please try again.').show();
+        function updateStars() {
+            stars.forEach((star, index) => {
+                if (index < currentRating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
                 }
             });
-        } else if (contact !== '') {
-            $('#contacterrormsg').text('Please enter a valid 10-digit number.').show();
         }
-    });
-});
-</script>
+
+        function highlightStars(rating) {
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        // Form Validation and Submission
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('patientName').value.trim();
+            const email = document.getElementById('patientEmail').value.trim();
+            const gender = document.getElementById('patientGender').value;
+            const phone = document.getElementById('patientPhone').value.trim();
+            const rating = document.getElementById('rating').value;
+            const reviewText = document.getElementById('reviewText').value.trim();
+
+            // Validation
+            if (!name || !email || !gender || !phone || !rating || !reviewText) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            if (reviewText.length < 50) {
+                alert('Please write a review with at least 50 characters.');
+                return;
+            }
+
+            // Phone number validation (basic)
+            const phoneRegex = /^[\+]?[0-9\s\-$$$$]{10,}$/;
+            if (!phoneRegex.test(phone)) {
+                alert('Please enter a valid phone number.');
+                return;
+            }
+
+            // Simulate form submission
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Submitting...';
+
+            setTimeout(() => {
+                // Show success message
+                document.getElementById('successMessage').classList.remove('d-none');
+                document.getElementById('reviewForm').style.display = 'none';
+                
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 2000);
+        });
+
+        // Phone number formatting
+        document.getElementById('patientPhone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 0) {
+                if (value.length <= 10) {
+                    value = value.replace(/(\d{5})(\d{0,5})/, '$1 $2');
+                } else {
+                    value = value.replace(/(\d{2})(\d{5})(\d{0,5})/, '+$1 $2 $3');
+                }
+            }
+            e.target.value = value.trim();
+        });
+    </script>
+</body>
+</html>
