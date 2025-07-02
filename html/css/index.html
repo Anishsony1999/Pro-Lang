@@ -4,483 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link rel="stylesheet" href="main.css">
-    <!-- <link rel="stylesheet" href="main1.css"> -->
-
 </head>
-<body >
-    <h1 style="color:black">
-        CSS
-    </h1>
-   <ol >
-    <li >inline CSS</li>
-    <li>internal CSS</li>
-    <li>external CSS</li>
-   </ol>
-
-   <p> color - inner text color</p>
-
-   sytax:
-        css-property : value
-
-        <br><input type="text" id="name" name="name" class="" placeholder="Red Border" required >
-        <br><input type="email" placeholder="Green  Border" id="email">
-        <br><input type="text" placeholder="Red Border" id="text">
-        <br><input type="checkbox" checked>
-
-
-        <div class="example">
-
-        </div>
-
-        <img alt="logo" src="">
-
-        <img alt="girl" src="./../../img/035eab54-674f-4608-ae87-4a35d6ccc7fc.jpeg" width="200" height="200">
-
-        <a href="https://google.com" target="_blank">click me</a>
-        <a href="">kni</a>
-
-        <section>
-            <div id="p">
-                <p>p1</p>
-                <p>p2</p>
-                <div>
-                    <p>child of div</p>
-                </div>
-                <p>p3</p>
-                <p>p4</p>
-                <p>p5</p>
-            </div>
-            <p>this p tag is next to div #p</p>
-            
-            <p>this p is 2nd next p tag </p>
-        </section>
-
+<body style="background-color: #000;color: #fff;">
     <section>
-        <h2> Selectors </h2>
-
-            <ol>
-                <li>ID Selector </li>  #name{}
-                <li>Class Selector </li>  .example{}
-                <li> HTML element/Tag Name </li> div{}
-                <li> HTML Attributes </li> [attributeName]{}
-
-                <li> CSS Pseudo Class 
-                    <ul>
-                        <li>active</li>
-                        <li>visited</li>
-                        <li>link</li>
-                        <li>hover</li>
-                        <li>disabled</li>
-                        <li>checked</li>
-                        <li>read-only</li>
-                        <li>read-write</li>
-                    </ul>
-                </li>
-
-                <li>
-                    Specia Characters
-                    <ul>
-                        <li>*</li>
-                        <li>~</li>
-                        <li>></li>
-                        <li>+</li>
-                        <li>,</li>
-                        <li>space</li>
-                        
-                    </ul>
-                </li>
-
-            </ol>
-    </section>
-
-    <section>
-        <h3>Box Model</h3>
-        <div id="divs">
-            <div>
-                1
-            </div>
-            <div>
-                2
-            </div>
+        <h1>Flex</h1>
+        <div class="d-flex">
+            <div>1</div>
+            <div>2</div>
+            <div style="flex-grow: 2;">3</div>
+            <div >4</div>
+            <div style="flex-grow: 2;">5</div>
+            <div>6</div>
         </div>
-    </section>
-
-    top, right, bottom, left 
-
-    z-index
-
-    float:right|left|none|inherit
-
-
-    <br>
-    <img src="../../img/img1.jpeg" alt="" width="200" >
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa adipisci nisi fuga! Reprehenderit ea, placeat necessitatibus fugiat libero sunt sit.</p>
-    <!-- <h1>This is ABout Image</h1> -->
-    <!-- <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, obcaecati? Eius eveniet esse unde laudantium veniam optio nam nihil autem. Cupiditate, tempore blanditiis molestiae pariatur itaque sint architecto voluptates corporis voluptate eos saepe reiciendis sapiente illo vero. Provident doloremque doloribus ullam sequi animi repudiandae voluptas veritatis, cum laudantium totam deserunt?
-    </p> -->
-
-    position:
-        static - done
-        relative 
-        absolute 
-        fixed 
-        sticky
-
-        <div id="fixed">
-            nga
-        </div>
-
-        <div id="fixed2">
-            nga
-        </div>
-
-        <section class="section">
-            section
-            <div class="parent">
-                parent
-                <div class="child">
-                    child
-                </div>
-            </div>
-
-        </section>
-
-        <section style="padding: 20px;">
-            <div style="height: 300px;">
-                <div class="stick">
-                    <h2>Heading-1</h2>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi iure quidem incidunt nesciunt, unde dicta in laborum quasi amet quibusdam!</p>   
-            </div>
-            <div style="height: 300px;">
-                <div class="stick">
-                    <h2>Heading-2</h2>
-                </div>
-                <p>Impedit nisi corporis illum nemo! Saepe, obcaecati doloribus voluptatem adipisci, nostrum quas maiores ratione eligendi, numquam accusantium totam necessitatibus veniam!</p>
-            </div>
-            <div style="height: 300px;">
-                <div class="stick">
-                    <h2>Heading-3</h2>
-                </div>
-                <p>Architecto deserunt velit porro repellat, fugiat consequatur modi reiciendis totam, voluptates quae inventore quidem nisi dolore dolores impedit, maiores tempore!</p>
-            </div>
-
-            <div style="height: 200px;"></div>
-        </section>
-
-        <!-- Display -->
-
-        block
-        inline
-        inline-block
-        none
-        grid
-        flex
-        ect...
-
-        <h1 style="display: inline-block;height: 100px; "> Display</h1>
-        <span>same line</span>
-
-
-        <section>
-
-            <div style="display:none ; height: 200px;"> display none</div>
-            <hr style="border: 2px solid red;">
-            <div style="visibility:hidden;height: 200px;"> visibility hidden</div>
-            <hr style="border: 2px solid red;">
-            
-        </section>
-
-        <section class="fonts">
-            <div style="height: 50px; border: 1px solid silver;overflow: hidden;">
-                <span>this is why red</span>
-                <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, repudiandae!
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam corrupti neque iste aliquid, mollitia esse totam vero nulla odit, facilis nemo non. Quod veniam fuga, ab modi tenetur eaque laborum!
-                </p>
-            </div>
-            
-        </section>
-
-        <a href="" style="text-decoration: none;" > this is a link</a>
-        <p style="text-decoration: underline;">this is not a tag</p>
-
-        <section>
-            <ul class="list">
-                <li>list1</li>
-                <li>list2</li>
-            </ul>
-        </section>
-
-        <section style="height: 100vh;width: 100vw;" id="background">
-            <h2 style="text-align: center;">BackGround</h2>
-
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam odit mollitia excepturi veritatis! Dicta maxime, nostrum rem recusandae enim, neque voluptate, illum earum nulla accusamus dolore possimus sequi libero error. Eveniet dolorem reprehenderit dolor nesciunt officia neque veritatis dicta velit iure, nulla ex qui doloremque quidem aperiam maiores? Aperiam eveniet quisquam in quis cupiditate. Aspernatur eos facilis placeat laboriosam repellendus nisi rem repellat possimus molestias unde et architecto dicta neque voluptates veritatis itaque totam earum cupiditate corporis vero, tempora sequi? Ipsa eveniet ut, corrupti adipisci enim iusto dolorem voluptates labore ipsam repudiandae corporis error modi praesentium molestiae soluta a cumque.
-
-        </section>
-
-        <section style="height: 100vh;width: 100vw;" >
-            <h3> 3rd Section </h3>
-        </section>
-
-        <nav id="navbar">
-            <ul>
-                <li>Home</li>
-                <li>home</li>
-                <li>About</li>
-            </ul>
-        </nav>
-
-
-        <section style="margin-bottom: 30px; display: flex;align-items: center;flex-direction: column;">
-            <h2>3D Transform</h2>
-            transform: values;
-
-            <div id="div">
-                <div style="background-color: azure;width: 100%;height: 50%;"></div>
-                <div style="background-color: rgb(29, 49, 178);width: 100%;height: 50%;"></div>
-            </div>
-        </section>
-
-        <section>
-            <h3>Display Grid</h3>
- 
-            <style>
-            
-            .grid-box{
-                display:grid;
-                gap:3px;
-                padding:10px;
-                background-color:yellow;
-            }
-
-            .grid-column{
-                background-color:rgb(0, 221, 255);
-                color:white;
-                text-align:center;
-                padding:20px;
-                font-size:20px;
-            }
-        
-            .column1{
-                grid-column:1;
-                grid-row:1;
-            }
-            
-            .column2{
-                grid-column:1;
-                grid-row:2;
-                background-color:green;
-            }
-        
-            .column3{
-                grid-column:2/span 3;
-                grid-row:2;
-            }
-        
-            .column4{
-                grid-column:1/span 3;
-                grid-row:3;
-            }
-        
-            .column5{
-                grid-column:3/span 2;
-                grid-row:3;
-                background-color:blue;
-            }
-            .column6{
-                grid-column:2/span 3;
-                grid-row:1;
-            }	
-            </style>
-        
-                <div class="grid-box">
-                    <div class="grid-column column1">COLUMN1</div>
-                    <div class="grid-column column2">COLUMN2</div>
-                    <div class="grid-column column3">COLUMN3</div>
-                    <div class="grid-column column4">COLUMN4</div>
-                    <div class="grid-column column5">COLUMN5</div>
-                    <div class="grid-column column6">COLUMN6</div>
-                </div>
- 
-
-        </section>
-
-
-        <section>
-            <h3 style="text-align: center;">Display Flex</h3>
-            <div class="flex-container">
-                <div class="flex-box flex-box1">1</div>
-                <div class="flex-box flex-box2">2</div>
-                <div class="flex-box flex-box3">3</div>
-            </div>
-        </section>
 
         <style>
 
-            .flex-container{
-                height: 100vh;
-                text-align: center;
+            .d-flex{
                 display: flex;
-                justify-content: space-between ;
-                align-items: center ;
-                flex-direction: row-reverse;
-                /* gap: 10px; */
-            }
-
-            .flex-container .flex-box{
-                height: 100px;
-                width: 100px;
-                background: #3fe2fb;
-                background: linear-gradient(54deg, rgba(63, 226, 251, 1) 25%, rgba(91, 70, 252, 1) 58%);
-            }
-
-            /* .flex-box2{
-                flex-grow: 2;
-            }
-
-            .flex-box3{
-                flex-grow: 3;
-            } */
-            
-            #div{
-                height: 100px;
-                width: 100px;
-                background-color: cadetblue;
-                margin: 30px;
-            }
-            #div:hover{
-                cursor: pointer;
-                /* transform: scale(2,2)  x-axis, y-axix ;*/
-                /* transform: scaleX(0.5); */
-                /* transform: scaleY(1.1); */
-                /* transform: scaleZ(1.1); */
-                /* transform: scale3d(1.1,1.1,1.1); x-axis, y-axis , z-axis */
-                /* transform: rotate(-90deg); 0-360 */
-                /* transform: rotateX(70deg); */
-                /* transform: rotateY(90deg); */
-                /* transform: rotateZ(90deg); */
-            }
-
-            #navbar{
-                position: fixed;
-                top:0;
-                right: 0;
-            }
-
-            #navbar a{
-                text-decoration: none;
-                color: white;
-            }
-
-            #navbar li{
-                display: inline-block;
-                list-style-type: none;
-                padding-right: 20px;
-                cursor: wait;
-            }
-
-            /* Mouse pointer Styles 
-                cursor: pointer;    
-                cursor: text;
-                cursor: auto;
-                cursor: move;
-                cursor: url; want to see
-                cursor: wait;
-                cursor: progress;
-                corsor: zoom-in;
-                cursor: zoom-out;
-                cursor: alias;
-                cursor: help;
-                cursor: all-scroll;
-                cursor: cell;
-                cursor: copy;
-                cursor: no-drop;
-                corsor: n-resize;
-                corsor: e-resize;
-                corsor: ns-resize;
-                corsor: ew-resize;
-                corsor: not-allowed;
-                corsor: grab;
-                corsor: grabbing;
-            */
-
-            #background{
-                /* background: ; */
-                /* background-color: aqua; */
-                /* background-image: url("C:/Users/HP/Downloads/download1.jpeg"); */
-                background-image: url("../../img/img1.jpeg");
-                background-repeat: no-repeat;
-                background-size: 50%;/* 50%,70%*/
-
-                background-attachment: fixed; /* fixed, scroll, local */
-
-                background-position: center; /* right, left, center */
-                /* background-position-x: center; right, left, center */
-                /* background-position-y: top; top, bottom, center */
-
-                /* single hander property */
-                /* background: aqua url("../../img/img1.jpeg") no-repeat fixed center ; */
-            }
-
-
-            .list{
-                list-style-type: circle; /* disc, circle, square */
-                /* list-style-image: url("../../img/img1.jpeg"); */
-            }
-
-            .list li{
-                text-decoration: underline;
-            }
-
-            .stick{
-                position: sticky;
-                top:0;
-                background-color: burlywood;
-                text-align: center;
-            }
-
-            .section{
                 height: 100vh;
-                width: 100vw;
-                background-color: rgb(154, 203, 203);
-                position: relative;
-            }
-            .parent{
-                color: black;
-                height: 300px;
-                width: 300px;
-                background-color: rgb(245, 245, 245);
-                /* position: relative; */
-            }
-            .child{
-                height: 100px;
-                width: 100px;
-                background-color: rgb(255, 255, 255);
-                position: absolute;
-                top: 0;
-                left: 0;
+                background-color: antiquewhite;
+                gap: 10px;
+                /* flex-direction: row-reverse; */
+
+                justify-content: space-around;
+                align-items: center;
+                flex-wrap: wrap-reverse;
+                /* align-content: space-around; */
             }
 
-            .fixed{
-                /* background-color: aquamarine; */
+            .d-flex div{
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                color: aquamarine;
-                height: 50px;
-                width: 50px;
-                border-radius: 50%;
-                position: fixed;
-                bottom: 10px;
-                right: 10px;
-                visibility: visible;
+                width: 100px;
+                height: 100px;
+                background-color: aqua;
+                color: #000;
+
+                box-shadow: 15px 25px 45px 0px rgba(69,189,250,0.68);
+                -webkit-box-shadow: 15px 25px 45px 0px rgba(69,189,250,0.68);
+                -moz-box-shadow: 15px 25px 45px 0px rgba(69,189,250,0.68);
             }
 
+        </style>
+    </section>
+
+    <section>
+        <div class="filters">
+            <img src="../../img/035eab54-674f-4608-ae87-4a35d6ccc7fc.jpeg" alt="">
+        </div>
+
+        <style>
+            .filters img{
+                /* filter: blur(1px); */
+                /* filter: brightness(0.5); */
+                /* filter: contrast(1.2); */
+                /* filter: drop-shadow();  */
+                /* filter: grayscale(); */
+                /* filter: hue-rotate(-60deg); */
+                /* filter: invert(); */
+                /* filter: opacity(0.2); */
+                /* filter: saturate(3); */
+            }
+        </style>
+    </section>
+
+
+    <section>
+        <div class="ani">
+            <h1>Athachum Nadakumaa....</h1>
+        </div>
+
+        <style>
+            .ani{
+                height: 100vh;
+                display: grid;
+                place-items: center;
+            }
+
+            .ani h1{
+                font-size: 40px;
+            }
+
+            @keyframes colors {
+                from{}
+                to{}
+            }
 
         </style>
+    </section>
 </body>
 </html>
