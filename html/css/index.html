@@ -55,17 +55,6 @@
         </div>
 
         <style>
-            .filters img{
-                /* filter: blur(1px); */
-                /* filter: brightness(0.5); */
-                /* filter: contrast(1.2); */
-                /* filter: drop-shadow();  */
-                /* filter: grayscale(); */
-                /* filter: hue-rotate(-60deg); */
-                /* filter: invert(); */
-                /* filter: opacity(0.2); */
-                /* filter: saturate(3); */
-            }
         </style>
     </section>
 
@@ -80,17 +69,75 @@
                 height: 100vh;
                 display: grid;
                 place-items: center;
+                position: relative;
             }
 
             .ani h1{
+                overflow: hidden;
                 font-size: 40px;
+                display: inline-block;
+
+                animation-name: colors;
+                animation-duration: 10s;
+                /* animation-delay: 2s; */
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards; /* backword , both */
+                animation-direction: reverse; 
+                animation-timing-function: ease-in-out;
+
+                /* animation: colors 10s ease-in infinite; */
             }
 
             @keyframes colors {
-                from{}
-                to{}
+                0%{
+                    position: absolute;
+                    top: 50%;
+                    left: 0px;
+                    color: red;
+                }
+
+                50%{
+                    position: absolute;
+                    top: 50%;
+                    left: 500px;
+                    color: blue;
+                    transform: scale(0.2);
+                }
+
+                100%{
+                    position: absolute;
+                    top: 50%;
+                    left:0px;
+                    color: purple;
+                }
             }
 
+            @media only screen and (min-width:600px)  {
+                body{
+                    background-color: red !important;
+                }
+
+                h1{
+                    font-size: 20px;
+                }
+
+                img{
+                    width: 200px;
+                }
+
+            }
+
+            @media only screen and (min-width:800px)  {
+                body{
+                    background-color: blue !important;
+                }
+
+                .ani{
+                    display: flex;
+                }
+
+
+            }
         </style>
     </section>
 </body>
