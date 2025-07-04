@@ -122,10 +122,33 @@ console.log(date.getMonth());// getDate(), getFullYear(),
 // Built in functions
 
 // String
+// Striing is immutable - we cont't change the string
+// String is a object
+// String is a sequence of characters
+ 
+let str = "Anish"; // literal
+let str2 = new String("Anish"); // object
 
-let str = "Anish";
-
-str.length;
+str.length; // 5
 str.toUpperCase(); // ANISH
 str.toLowerCase(); // anish
 str.charAt(0); // A
+
+document.writeln(str.slice(0,3)); //ani
+
+str.split(""); // ["A","n","i","s","h"]
+
+str.indexOf("i"); //2
+str.replace("A","B"); // Bnish
+str.replace("Anish","Sony"); // Sony
+str.startsWith("A"); // true
+str.endsWith("h"); // true
+str.lastIndexOf("0"); // -1
+str.includes("A"); // true
+console.log(str.search("i"));
+
+console.log(str[4]);
+
+// "Anish" -> hsinA
+// "Hello World" -> "dlroW olleH"
+// "Hello World" -> "olleH dlroW" 
