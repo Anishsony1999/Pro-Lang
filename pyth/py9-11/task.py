@@ -23,15 +23,16 @@ for i in range(len(list1)):
 
 print(count)
 
-str = "Amma"
-ans =""
-for i in str:
-    if i.isalpha():
-        ans = ans + i
-rev=""
+str = "Amma".lower()
 
-for i in ans:
-    rev = i + rev
+i = 0
+j = len(str)-1
 
-if rev == ans : print("this is pali")
-else : print("is not a pali")
+while i < j :
+    if str[i] != str[j] :
+        print("its not a pali")
+        break
+    i +=1
+    j -=1
+else: 
+    print("its a pali")
