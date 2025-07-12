@@ -77,15 +77,128 @@ x = 20
 x = str(x)
 print(type(x))
 
-x = int(name) # Error because name is a string data type and we can't convert string to integer
+#x = int(name) # Error because name is a string data type and we can't convert string to integer
+
+x = tuple()
+x = (2.3,45,6)
+
+x = (True,2,"anish",2) # tuple is immutable
+print(x)
+
+*i,j = x
+
+print(i)
+
+# x[0] = False # Error because tuple is immutable
 
 
+# Set Data Type
+# Set don't allow dublicate values
+# Set is unordered
+
+x = set()
+x = {}
+
+my_set = {1,"String",3.4,True}
+my_set.add(10)
+my_set.update([20,20,10])
+
+my_set.remove(10)
+
+new_set = my_set.copy()
+new_set = set(my_set)
+
+print(my_set)
+
+bool_set = {True,False,1,0}
+
+print(bool_set)
 
 
+# [] -> list
+# () -> tuple
+# {} -> set
+
+# Task
+
+# [2,3,4,1,3,5,7,8] [6,4,2,33,2,11,2,3,4,56,7,8]
+# 1, [2,3,4,7,8]
+# 2, merge and sort without dublicate values 
 
 
+# Dictionary
+# dictionary is a collection of key value pairs
+# dictionary dont allow dublicate keys but allow dublicate values
+
+x = ["Anish",24,"Male"]
+x[0] = "Anish Sony"
+
+print(x)
+
+# JSON -> JavaScript Object Notation
+
+my_dict = {
+    "name":"Anish",
+    "age":24,
+    "gender":"Anish",
+    "name":"Anish Sony",
+}
+print(my_dict)
+# add
+my_dict["address"] = "KK"
+# read
+print(my_dict["name"]) # Anish
+print(my_dict.get("name")) # Anish
+
+# remove
+# del my_dict["gender"]
+my_dict.pop("gender")
+
+# update
+my_dict["name"] = "Anish Sony"
 
 
+print(my_dict)
+
+new_dict = dict()
+
+print(my_dict.keys())
+print(my_dict.values())
+
+for key in my_dict:
+    print(key,my_dict[key])
+
+for key,val in my_dict.items():
+    print(key,val)
+
+print(my_dict.items()) # return list of tuples
+
+user1 ={
+    "name":"Anish",
+    "age":24,
+    "gender":"Male",
+}
+
+user2 ={
+    "name": "Anusha",
+    "age":24,
+    "gender":"Female"
+}
+
+users ={
+    "user1" : user1,
+    "user2" : user2,
+}
+
+print(users["user2"]["name"])
 
 
+x = ["Aish","Anisha","Anu"]
+
+myNew_dic = dict()
+
+for i in range(len(x)):
+    myNew_dic[i] = x[i]
+
+print(myNew_dic)
 
