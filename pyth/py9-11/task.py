@@ -36,3 +36,39 @@ while i < j :
     j -=1
 else: 
     print("its a pali")
+
+
+# ======= 14 - 07 - 2025 ==========
+# 
+
+x = "-10"
+
+ans =""
+
+for i in x :
+    ans = i + ans
+
+if ans[len(ans)-1] == "-":
+    ans = ans.replace("-","")
+    ans = "-" + ans
+    
+print(ans)
+
+x = -123
+ans = 0
+sing = 1
+
+if x < 0 :
+    sing = -1
+    x = x * -1
+
+while x > 0 :
+
+    y = x % 10
+
+    x = x // 10
+
+    print(y)
+    ans = ans * 10 + y
+
+print(ans * sing)
