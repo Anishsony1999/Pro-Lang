@@ -1,5 +1,7 @@
 package javalang.dona;
 
+import java.util.Random;
+
 public class basic {
 
     public static void main(String[] args) {
@@ -14,6 +16,7 @@ public class basic {
         for(int i= 1; i <= 10 ; i = ++i + 2){
             // i = i++ ;
             System.out.println(i);
+            
         }
 
         
@@ -74,5 +77,9 @@ public class basic {
         
         
         String str3 = new String("Anish");
+
+        Random random = new Random();
+        int x = random.nextInt(1,11);
+        
     }
 }
