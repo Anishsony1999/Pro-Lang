@@ -21,7 +21,7 @@ public class basic {
         };
 
         System.out.println(nums2[2][2]);
-
+        
         // [
         //  [1,2,3],
         //  [4,5,6],
