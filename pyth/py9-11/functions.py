@@ -64,3 +64,38 @@ def retur_function():
 val = retur_function()
 
 val()
+
+
+def parent(name):
+    name = name
+    coin = 5
+    time = 0
+    def play():
+        nonlocal coin
+        nonlocal name
+        nonlocal time
+
+        time += 1
+        coin -= 1
+
+        print("times : ",time)
+        print("blance Coin : " ,coin)
+        print("name : ",name)
+    return play
+
+boy = parent("Anish") # 5
+girl = parent("Anisha") # 5
+boy()
+girl()
+boy()
+boy()
+boy()
+
+# function call the same function is called recursion
+
+def fac(num):
+    if num == 1:
+        return 1
+    return num * fac(num-1)
+
+print(fac(5))
