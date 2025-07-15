@@ -4,31 +4,75 @@ public class basic {
 
     public static void main(String[] args) {
 
-        String[] names = {"Dona","Anish","Sony"};
+        // LOOPS
 
-        for(String i : names){
+        //  for loop
+        //  while loop
+        //  do while loop
+        //  for each loop
+
+        for(int i= 1; i <= 10 ; i = ++i + 2){
+            // i = i++ ;
             System.out.println(i);
         }
 
-        System.out.println(names[0]);
+        
 
-        // Two Dimensional Array
-        int[][] nums = new int [3][3];
-        int[][] nums2 ={
-            {1,2,3},
-            {4,5,6},
-            {7,8,9}
+        //  ++i -> pre increment
+        //  i++ -> post increment
+
+        // int j = ++i * 2;
+        // System.out.println(j); // 22
+
+
+        int[] arr= {46,424,64,67,84,44,3,2,323,43};
+
+        System.out.println(arr);
+
+        // [1,3,4,5,2,4,2,1,3,4] , target = 6
+
+        for(int i = 0; i< arr.length ; i++){
+            if (arr[i] == 67) continue;
+            System.out.print(arr[i] + " ");
+        }
+
+        for(int i = 1; i <=3;i++){
+            for(int j = i; j <=3 ; j++){
+                System.out.println(j + " " + i); // 1 1, 2 1,3 1,
+            }
+        }
+
+        String[][] arr2 = {
+            {"Anish","24","Male"},
+            {"Dona","30","Female"},
+            {"Arun","30","Male"}
         };
 
-        System.out.println(nums2[2][2]);
+        System.out.println(arr2[2][1]);
+
+        for(int i = 0; i < arr2.length; i++){
+            // System.out.println(arr2[i].length);
+            for(int j = 0; j < arr2[i].length; j++){
+                for(int k = 0 ; k < arr2[i][j].length(); k++){
+                    
+                }
+            }
+        }
+
+        // String
+        // String is immutable
+        // String is a squence of characters
+        // String is a Object
+        // String is indexed starting from 0
+
+        // Creating String
+
+        String str1 = "Anish"; // String Literal
+        String str2 = new String("Dona"); // String Object
+
+        System.out.println(str1.charAt(2));
         
-        // [
-        //  [1,2,3],
-        //  [4,5,6],
-        //  [7,8,9]
-        // ]
-
-
-        System.out.println(nums.length);
+        
+        String str3 = new String("Anish");
     }
 }
