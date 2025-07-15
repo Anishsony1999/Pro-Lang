@@ -109,3 +109,60 @@ print(name[0 : 10 : 2]) # AihSn
 print(name[-10 : -1])
 
 print(name[::-1]) # reverse string
+
+
+# string functions
+
+name = "    anish sony    "
+
+print(name.upper()) # ANISH SONY
+print(name.lower()) # anish sony
+print(name.capitalize()) # Anish sony
+print(name.title()) # Anish Sony
+
+print(name.strip()) # left and right space remove
+print(name.lstrip() + " hi") # left space remove
+print(name.rstrip() + " hi") # right space remove
+
+
+print(name.find("i")) # 6
+print(name.endswith("y"))  # False
+print(name.startswith("a")) # Flase
+
+print(name.replace("a", "A")) # Anish sony
+print(name.replace("anish","Devika"))
+
+list1 = name.split("i") # split method use to spilt string to list
+print(list1)
+
+# loops
+
+# for loop
+# while loop
+
+# for loop
+
+# for variable_name in sequence:
+#     statement
+
+# range function
+
+# range(start, stop, step)
+
+for i in range(10):
+    print((i))
+
+for i in range(5,10):
+    print((i))
+
+for i in range(5,10,2):
+    print((i))
+
+for i in range(10,1,-1):
+    print(i)
+
+for char in "Anish":
+    if char == 'i':
+        print( "this is i ")
+    
+# Anish -> hsinA
