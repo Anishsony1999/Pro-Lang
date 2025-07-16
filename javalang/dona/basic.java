@@ -1,6 +1,8 @@
 package javalang.dona;
 
+import java.lang.reflect.Array;
 import java.util.Random;
+import java.util.Scanner;
 
 public class basic {
 
@@ -67,10 +69,12 @@ public class basic {
         // String is a squence of characters
         // String is a Object
         // String is indexed starting from 0
+        // String object are stored in heap memory ( String pool )
 
         // Creating String
 
-        String str1 = "Anish"; // String Literal
+        String str1 = "anish"; // String Literal
+        String str4 = "Anish";
         String str2 = new String("Dona"); // String Object
 
         System.out.println(str1.charAt(2));
@@ -78,8 +82,98 @@ public class basic {
         
         String str3 = new String("Anish");
 
-        Random random = new Random();
-        int x = random.nextInt(1,11);
+        // == operator compares the address of the object
+
+        if (str4.equals(str1)){
+            System.out.println("Equal");
+        }
+        
+        // String Methods
+
+        // length()
+        // charAt()
+        // substring()
+        // equals()
+        // equalsIgnoreCase()
+        // toLowerCase()
+        // toUpperCase()
+        // trim()
+        // concat()
+        // replace()
+        // split()
+        // indexOf()  
+        // lastIndexOf()
+        // contains()
+        // startsWith()
+        // endsWith()
+
+        String substring = str1.substring(0,3);
+        System.out.println(substring); // Ani
+
+        String newString = "    this appoinment id=1896 and date=23  " ;
+
+        // for(int i=0 ; i <newString.length(); i++){
+        //     if ( newString.charAt(i)>='0' && newString.charAt(i)<='9'){
+        //         System.out.print(newString.charAt(i));
+        //     }
+        // }
+
+        boolean fount = false;
+        for(int i=0 ; i <newString.length(); i++){
+
+            if((newString.charAt(i)>='0' && newString.charAt(i)<='9')){
+                fount = true;
+                System.out.print(newString.charAt(i));
+            }
+
+            if (fount && newString.charAt(i) == ' '){
+                break;
+            }
+            i++;
+        }
+        
+        // equalIgnoreCase()
+
+        if(str1.equalsIgnoreCase(str4)){
+            System.out.println("Equal");
+        }
+
+        System.out.println(newString.toLowerCase());
+        System.out.println(newString.toUpperCase());
+
+        
+        System.out.println(newString.trim());
+        
+        String fname = "Anish";
+        String lname =" Sony";
+        System.out.println(fname.concat(lname));
+        String fullName  = fname + lname;
+        System.out.println(fullName);
+
+
+        System.out.println(fullName.replace("A","S"));
+        System.out.println(fullName);
+
+        System.out.println(fullName.indexOf("S"));
+
+        System.out.println(fullName.lastIndexOf("ny")); // Anish Sony
+
+        System.out.println(fullName.startsWith("Anish"));
+
+        System.out.println(fullName.endsWith("y"));
+
+        System.out.println(fullName.contains("Anish"));
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a string");
+        String str = sc.next();
+
+        // hello world. -> .dlrow olleh
+        // Hello World. -> .World Hello
+
+
+
+        sc.close();
         
     }
 }
