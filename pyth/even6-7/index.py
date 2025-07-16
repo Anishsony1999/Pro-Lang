@@ -166,3 +166,65 @@ for char in "Anish":
         print( "this is i ")
     
 # Anish -> hsinA
+
+# While loop 
+
+# variable initialization
+
+# while condition:
+#     statement
+#     increment/decrement(iteration)
+
+i = 10
+while i > 0:
+    print(i)
+    i -= 1
+
+while True: # this is an infinite loop
+   print(i)
+   i += 1
+   break
+
+# break 
+# its help to break the current loop
+
+for i in range(1,11):
+
+    if i == 5 :
+        break
+    print(i)
+
+# continue
+# its help to skip the current iteration
+
+for i in range(1,11):
+
+    if i == 5 :
+        continue
+    print(i)
+
+# pass
+# pass is a placeholder for future code
+
+name = "Devika"
+
+if name == "Anish":
+    pass
+
+# Anish Sony -> hsinA ynoS
+# Anish Sony -> ynoS hsinA
+# palandrome -> Amma , Malayalam , 121 , Dad -> is a palandrome 
+
+# inner loops
+
+for i in range(1,11):
+    for j in range(1,11):
+        if i*j == 10:
+            break
+        print(i*j)
+    print(" --------- ")
+
+
+# input -> "String" -> count the vowels 
+
+
