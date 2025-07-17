@@ -227,4 +227,11 @@ for i in range(1,11):
 
 # input -> "String" -> count the vowels 
 
+# Some more Data Types
+
+# List
+# Tuple
+# Set
+# Dictionary
+
 
