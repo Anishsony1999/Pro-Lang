@@ -213,3 +213,170 @@ console.log(names)
 console.log(names.toString())
 
 
+// conditional statements
+
+// if
+
+// if(condition){
+// }
+
+if (true){
+    console.log("Hello World")
+}
+
+// if else
+
+// if(condition){
+// }else{
+// }
+
+if (false){
+    console.log("Hello World");
+}else{
+    console.log("Hello Guest")};
+
+// if else if else
+
+// if(condition){
+// }else if(condition){
+// }else{
+// }
+
+if (false){
+
+}else if (false){
+
+} else{
+
+}
+
+// nested if
+
+// if(condition){
+//     if(condition){
+//     }else{
+//     }
+// }else{
+// }
+
+if (true){
+    if(true){
+
+    }
+}
+
+// group of condition
+// && || !
+
+if ( true && false){
+    console.log("condition is false")
+}
+
+if ( true || false){
+    console.log("condition is true")
+}
+
+if (!true){
+    console.log("condition is not true")
+}
+
+// switch case
+
+// switch(condition){
+//     case value1:
+//         // code block
+//         break;
+//     case value2:
+//         // code block
+//         break;
+//     default:
+//         // code block
+// }
+
+str = "anish"
+
+switch(str){
+    case "avanthika":
+        console.log("avanthika")
+        break;
+    case "anish":
+        console.log("anish")
+        break;
+    default:
+        console.log("default")
+}
+
+// loop
+
+// for loop
+// while loop
+// do while loop
+// for in loop
+// for of loop
+
+// for loop
+
+// for( initialization; condition; increment/decrement){
+//     // code block
+// }
+
+for (let i = 0; i < 10; i++) {
+    console.log(i)
+}
+
+// while loop  
+
+// initialization
+// while(condition){
+//     increment/decrement
+// }
+
+i = 0;
+
+while (i < 10) {
+    console.log(i)
+    i++
+}
+
+// do while loop
+
+// initialization
+// do{
+//     increment/decrement
+// }while(condition);
+
+i = 0;
+
+do {
+    console.log(i)
+    i++
+} while (i < 10)
+
+
+// for in loop
+
+// for (variable in object){
+//     // code block
+// }
+
+user = ["Anish","Avanthika","Sony"]
+
+for ( i in user){
+    console.log(user[i])
+}
+
+// for of loop
+
+// for (variable of object){
+//     // code block
+// }
+
+user = ["Anish","Avanthika","Sony"]
+
+for ( i of user){
+    console.log(i)
+}
+
+// Task 
+// [5,2,1,4,5,2,1,3] target = 9 // [0,3]
+// ["Anish","Avanthika","Sony"] vowels count
