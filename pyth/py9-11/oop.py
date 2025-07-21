@@ -50,16 +50,62 @@
 
 # constructor is help to allocate memory to the object.
 
+# defalut constructor:
+# it will be called automatically when object is created.
+
+
+
+
 class Home:
     def __init__(self):
+        self.fan = False
         print("constructor is called")
+    def  fan_on(self):
+        self.fan = True
+        print("fan is on")
+    def fan_off(self):
+        self.fan = False
+        print("fan is off")
+    def check(self):
+        if self.fan == True:
+            print("fan is on")
+        else:
+            print("fan is off")
+
+hom1 = Home()
+hom2 = Home()
+hom1.check()
+hom1.fan_on()
+hom1.check()
+hom1.fan_off()
+hom1.check()
+hom2.check()
+
+# hom2 = Home("Anish")
+
+# Inheritance:
+# Inheritance is one Way sharing.
+# Inheritance is a mechanism in which one class acquires the property of another class.
+
+# 5 types of inheritance:
+# 1. single inheritance
+# 2. multiple inheritance -> one class inherits from multiple classes.
+# 3. multilevel inheritance
+# 4. hierarchical inheritance -> one class inherits from multiple classes.
+# 5. hybrid inheritance
+
+class Parent:
 
     def __init__(self,name):
-        print(f"constructor is called {name}")
+        self.name = name
 
-    def sum(self):
-        print("sum is called")
+    def welcome(self):
+        print(f"Welcome {self.name}")
 
-# hom1 = Home()
-hom2 = Home("Anish")
-hom2.sum()
+# class ClassName(ParentClassName):
+
+class Child(Parent):
+    pass
+
+child = Child("Anish")
+child.welcome()
