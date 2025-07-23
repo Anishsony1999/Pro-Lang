@@ -68,3 +68,37 @@ print(a,b) # 6 9
 # creat new acc -> name , email, pass, confirm pass -> create acc
 
 # 3,exit()
+
+# oops
+# 6 things
+# class, object, inheritance, polymorphism, encapsulation, abstraction
+
+# money, plan , thinks , place , workers 
+# place , plan , workers , thinks -> home 
+
+# place - memory
+# plan - blue print
+# workers - constuctor
+# thinks - methods, variables
+# Home - object
+
+# class:
+# class is the blue print of the object
+# class is the collection of methods and variables
+
+# object:
+# object is the instance of the class
+# object is the physical existence of the class
+
+# class ClassName:
+class Home:
+    pass
+
+# Object Creation
+home1 = Home()
+str1 = str()
+list1 = list(str1)
+x = 10
+
+print(type(home1))
+
