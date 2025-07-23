@@ -92,13 +92,44 @@ print(a,b) # 6 9
 
 # class ClassName:
 class Home:
-    pass
+
+    def __init__ (self,hall,kitchen):
+        self.acc = 0
+        self.hall = hall
+        self.kitchen = kitchen
+
+    def __str__ (self):
+        return f"{self.room}"
+
+    def sum(a,x,y):
+        return x+y
+    
 
 # Object Creation
-home1 = Home()
-str1 = str()
-list1 = list(str1)
-x = 10
+home1 = Home(2,1,1)
+home2 = Home(3,2,1)
+# home1.room = 2
+# home1.hall = 1
+# home1.kitchen = 1
 
-print(type(home1))
+# home2.room = 2
+# home2.hall = 1
+# home2.kitchen = 1
+
+print("Home Class : ", home1) 
+
+print(home1.kitchen)
+# print(home1.sum(50,20))
+
+str1 = list()
+
+# constructor:
+# constructor is the special method in the class
+# constructor is used to initialize the variables
+# constructor is called automatically when object is created
+# constructor is used to allocate the memory - main point
+# type of constructor:
+# 1. default constructor - no parameters it will be called automatically when object is created
+# 2. parameterized constructor - it will be called automatically when object is created with parameters
+
 

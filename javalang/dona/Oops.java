@@ -28,7 +28,18 @@ public class Oops {
 
     public static void main(String[] args) {
     
-        Home bh = new Home();
+        // firbinal number
+        int x = 0;
+        int y = 1;
+        // 0,1,1,2,3,5,8,13
+
+        for(int i = 1; i<=10; i++){
+            System.out.println(x);
+            
+            int temp = x + y ;
+            x = y;
+            y = temp;
+        }
         
     }
 }
