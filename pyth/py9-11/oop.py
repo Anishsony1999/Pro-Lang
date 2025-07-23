@@ -56,6 +56,10 @@
 
 
 
+from typing import overload
+from typing_extensions import override
+
+
 class Home:
     def __init__(self):
         self.fan = False
@@ -103,34 +107,22 @@ class Parent:
     def welcome(self):
         print(f"Welcome {self.name}")
 
-    def setBalance(self,balance):
-        self.balance = balance
-    
-    def getBalance(self):
-        return self.balance
-
-
-class Parent2:
-    def __init__(self,age):
-        self.age = age
-
-    def setAge(self,age):
-        self.age = age
-
-    def getAge(self):
-        return self.age
+    def sum(self,x,y):
+        return x + y
 
 # class ClassName(ParentClassName):
 
-class Child(Parent,Parent2):
-    pass
+class Child(Parent):
+
+    def add(self,x,y):
+        return x + y
+
+    @override
+    def sum(self,x,y):
+        return x + y + 20
 
 child = Child("Anish")
-child.setBalance(10000)
-print(child.getBalance())
 
-child.welcome()
-
-child.setAge(20)
-print(child.getAge())
+print(child.sum(30,30))
+print(child.add(30,30))
 
