@@ -98,14 +98,39 @@ class Parent:
 
     def __init__(self,name):
         self.name = name
+        # self.balance = 0
 
     def welcome(self):
         print(f"Welcome {self.name}")
 
+    def setBalance(self,balance):
+        self.balance = balance
+    
+    def getBalance(self):
+        return self.balance
+
+
+class Parent2:
+    def __init__(self,age):
+        self.age = age
+
+    def setAge(self,age):
+        self.age = age
+
+    def getAge(self):
+        return self.age
+
 # class ClassName(ParentClassName):
 
-class Child(Parent):
+class Child(Parent,Parent2):
     pass
 
 child = Child("Anish")
+child.setBalance(10000)
+print(child.getBalance())
+
 child.welcome()
+
+child.setAge(20)
+print(child.getAge())
+
