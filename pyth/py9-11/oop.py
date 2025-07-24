@@ -102,27 +102,15 @@ class Parent:
 
     def __init__(self,name):
         self.name = name
-        # self.balance = 0
+        self._age = 20
+        self.__balance = 0
 
-    def welcome(self):
+    def getName(self):
         print(f"Welcome {self.name}")
 
-    def sum(self,x,y):
-        return x + y
+parent = Parent("Anish")
 
-# class ClassName(ParentClassName):
+parent.getName()
 
-class Child(Parent):
-
-    def add(self,x,y):
-        return x + y
-
-    @override
-    def sum(self,x,y):
-        return x + y + 20
-
-child = Child("Anish")
-
-print(child.sum(30,30))
-print(child.add(30,30))
+print(parent._age)
 
