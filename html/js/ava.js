@@ -53,7 +53,7 @@ function sum(){
     let i = 200; //  local scope
     console.log("Value of i is : " + i);
 }
-sum();
+// sum();
 
 console.log("Value of i is : "+i);
 
@@ -380,3 +380,64 @@ for ( i of user){
 // Task 
 // [5,2,1,4,5,2,1,3] target = 9 // [0,3]
 // ["Anish","Avanthika","Sony"] vowels count
+
+arr = [5,2,1,4,5,2,1,3]
+target = 9
+
+for ( i in arr){
+    for ( j in arr){
+        if (arr[i] + arr[j] == target){
+            console.log(i,j)
+        }
+    }
+}
+
+
+for( i =0 ; i < arr.length; i++){
+    for (j=i+1; j <arr.length;j++){
+        if (arr[i] + arr[j] == target){
+            console.log(i,j);
+        }
+    }
+}
+
+//functions 
+
+// function functionName(){}
+
+// function sum(x,y){
+//     return x+y;
+// }
+
+// a = Number(prompt("Enter First Number"));
+// b = Number(prompt("Enter Second Number"));
+// function call
+// x = sum(a,b);
+// document.writeln(x);
+
+// function expression
+
+// let sum = function(x,y){
+//     return x+y;
+// }
+
+// x = sum(10,10);
+
+// arrow function
+// unknown Function is called arrow function
+
+x =() => {
+    console.log("Hello World")
+}
+
+x();
+
+add = (x,y) => {x+y}
+
+console.log(add(10,10))
+
+// no need return keyword no need function keyword
+
+// DOM - Document Object Model
+
+
