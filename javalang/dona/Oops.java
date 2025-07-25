@@ -47,9 +47,25 @@ class Home{
     String color;
     int room ;
     int chairs;
-
-    
 }
 
 
+// pillers of oops 
+
+// 1, inheritance
+// 2, polymorphism
+// 3, encapsulation
+// 4, abstraction
+
+
+// 1, inheritance:
+// inheritance is a one way sharing 
+// ita parent child relation ship
+
+// child class can access parent class methodas and variables
+// parent class can not access child class methodas and variables
+
+// we use a keyword extends to create inheritance
+
+// single inheritance
 
