@@ -106,4 +106,3 @@ print(type(x)) # str
 
 # and or not
 
-
