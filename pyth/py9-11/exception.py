@@ -18,28 +18,28 @@
 # input1= int(input("Enter a number: "))
 # input2= int(input("Enter a number: "))
 
-try:
-    pass
-except:
-    pass
-finally:
-    pass
+# try:
+#     pass
+# except:
+#     pass
+# finally:
+#     pass
 
-try: 
-    print(input1/input2)
+# try: 
+#     print(input1/input2)
 
-    print(y)
+#     print(y)
 
-except ZeroDivisionError:
-    print("Division by zero is not allowed")
+# except ZeroDivisionError:
+#     print("Division by zero is not allowed")
 
-except Exception as e:
-    print(e)
+# except Exception as e:
+#     print(e)
 
-finally:
-    print("This is finally block")
+# finally:
+#     print("This is finally block")
 
-print("End of the program")
+# print("End of the program")
 
 # try block:
 #     # code block where exception can occur
@@ -53,7 +53,26 @@ print("End of the program")
 
 # raise is the keyword used to raise an exception
 
-name = input("Enter Your Name : ")
+# name = input("Enter Your Name : ")
 
-if name.lower() == "anish":
-    raise Exception("Admin Not Allowed")
+# if name.lower() == "anish":
+#     raise Exception("Admin Not Allowed")
+
+
+# creating custom exception
+
+class UserNotFoundError(Exception):
+    def __init__(self, message):
+        self.message = message
+        super().__init__(self.message)
+
+
+pasword = "123"
+enterPass = "124"
+
+try: 
+    if pasword != enterPass:
+        raise UserNotFoundError("User Not Found")
+except UserNotFoundError as e:
+    print(e)
+

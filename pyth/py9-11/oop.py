@@ -106,11 +106,40 @@ class Parent:
         self.__balance = 0
 
     def getName(self):
+
         print(f"Welcome {self.name}")
+    
+    def setBalance(self,balance):
+
+        self.__balance = balance
 
 parent = Parent("Anish")
 
 parent.getName()
 
-print(parent._age)
+print(parent.__balance)
+
+from abc import ABC,abstractmethod
+
+class Animal(ABC):
+
+    @abstractmethod
+    def speak(self,name):
+        pass
+
+class Dog(Animal):
+
+    def speak(self,name):
+        print(f"{name} says bow bow")
+
+class Cat(Animal):
+
+    def speak(self,name):
+        print(f"{name} says meow meow")
+
+dog = Dog()
+dog.speak("Tom")
+
+cat = Cat()
+cat.speak("Jerry")
 
