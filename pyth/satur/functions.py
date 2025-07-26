@@ -5,6 +5,10 @@
 # function can be called multiple times
 # function can be used in multiple places
 
+from typing import overload
+from typing_extensions import override
+
+
 def fan():
     print("Fan On")
 
@@ -93,13 +97,14 @@ print(a,b) # 6 9
 # class ClassName:
 class Home:
 
-    def __init__ (self,hall,kitchen):
+    def __init__ (self,hall,kitchen,acc):
+        self.name = "Home"
         self.acc = 0
         self.hall = hall
         self.kitchen = kitchen
 
     def __str__ (self):
-        return f"{self.room}"
+        return f"Name : {self.name} Hall : {self.hall}"
 
     def sum(a,x,y):
         return x+y
@@ -131,5 +136,65 @@ str1 = list()
 # type of constructor:
 # 1. default constructor - no parameters it will be called automatically when object is created
 # 2. parameterized constructor - it will be called automatically when object is created with parameters
+
+
+# pillers of oops:
+# 1. inheritance
+# 2. polymorphism
+# 3. abstraction
+# 4. encapsulation
+
+# 1, inheritance:
+    # inheritance is the onle way sharing 
+    # sharing the properties of the parent class to the child class
+
+    # Parent class -> super class , base class
+    # Child class -> sub class, derived class , extended class
+
+    # 5 types:
+    # 1. single inheritance
+    # 2. multiple inheritance
+    # 3. multilevel inheritance
+    # 4. hierarchical inheritance
+    # 5. hybrid inheritance
+
+# super() -> help to call near parent class methods, variables
+
+# polymorphism:
+    # poly - many
+    # morph - forms
+    # polymorphism - many forms
+
+# 1. compile time polymorphism
+    # method overloading
+    # operator overloading
+    # in python we can overload the methods because python is dynamic language ( interpreter)
+
+# 2. run time polymorphism
+    # method overriding
+
+
+class Parent(object):
+
+    def __init__(self):
+        self.x = input("Enter Num 1 : \n")
+        self.y = input("Enter Num 2 : \n")
+
+    def add(self):
+        return int(self.x) + int(self.y)
+
+class Chile(Parent):
+
+    @override
+    def add(self):
+        return int(self.x) * int(self.y)
+        # return super().add() 
+
+    def add_sum(self):
+        return super().add()
+
+obj = Chile()
+ans = obj.add()
+print(ans)
 
 
