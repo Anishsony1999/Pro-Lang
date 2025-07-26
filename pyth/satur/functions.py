@@ -185,6 +185,10 @@ class Parent(object):
 
 class Chile(Parent):
 
+    @staticmethod
+    def summ(x,y):
+        return x+y
+
     @override
     def add(self):
         return int(self.x) * int(self.y)
@@ -193,8 +197,55 @@ class Chile(Parent):
     def add_sum(self):
         return super().add()
 
-obj = Chile()
-ans = obj.add()
-print(ans)
+def add():
+    print("Add function called")
+
+# abstraction:
+    # abstraction is the process of hiding the implementation details from the user
+
+# abstract class:
+    # abstract class is the class which contains abstract methods
+
+# abstract method:
+    # abstract method is the method which is declared but not implemented(method with out body)
+    # to implemnt abstract methosd u need to inherit the abstract class
 
 
+from abc import ABC, abstractmethod
+
+class Student(ABC):
+
+    # id,name,class
+    @abstractmethod
+    def set_student_name(self,name):
+        pass
+
+    @abstractmethod
+    def get_student_name(self):
+        pass
+
+    @abstractmethod
+    def set_student_id(self,id):
+        pass
+
+
+class StudentImpl(Student):
+
+    def set_student_name(self,name):
+        self.name = name
+
+    def get_student_name(self):
+        return self.name
+
+    def set_student_id(self,id):
+        self.id = id
+
+    def get_student_id(self):
+        return self.id
+
+student1 = StudentImpl()
+
+student1.set_student_name("Anish")
+student1.set_student_id(1)
+
+print(student1.get_student_name())
