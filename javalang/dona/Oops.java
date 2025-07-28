@@ -69,3 +69,31 @@ class Home{
 
 // single inheritance
 
+// polymorphism :
+// poly meams many
+// morph means forms
+
+// many + forms  = polymorphism
+
+// type of polymorphism:
+// 1, compile time polymorphism (overloading)
+// 2, runtime polymorphism (overriding)
+
+// overriding :
+// its happens in runtime
+// same method name and same number of arguments
+// its happens in inheritance (parent child relation ship)
+
+
+// abstraction:
+// its a process of hiding the implementation details and showing only the functionality to the user
+
+// using abstract class and interface we can create abstraction
+
+// interface:
+// in interface all the method are public abstract and all the variables are final and static
+// we can not create object of interface
+// we can implement interface using implements keyword
+// we con't inherit interface using extends keyword
+// we can inherit multiple interface.
+// also we can write method in interface using default keyword
