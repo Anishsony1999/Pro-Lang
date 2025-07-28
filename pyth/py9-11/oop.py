@@ -143,3 +143,30 @@ dog.speak("Tom")
 cat = Cat()
 cat.speak("Jerry")
 
+
+str1 = str("Anish")
+str2 = str("Anish")
+
+print(str1 == str2)
+
+class Person:
+
+    def __init__(self,name):
+        self.name = name
+
+    def __eq__(self,obj):
+        return self.name == obj.name
+
+    def __add__(self,obj):
+        return self.name + obj.name
+
+person1 = Person("Anish")
+person2 = Person("Anish")
+
+print(person1)
+print(person2)
+
+print(person1.name == person2.name)
+print(person1 == person2)
+
+
