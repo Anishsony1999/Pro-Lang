@@ -1,9 +1,3 @@
-This is new String1This is new String1
-i 
-try
-to 
-apppent
-
 name : Anisha
 age : 25
 add : tvm
