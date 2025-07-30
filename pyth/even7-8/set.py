@@ -40,3 +40,19 @@ set1.clear()
 
 set2 = set1.copy()
 
+
+# [1,2,1,2,3,4,6,7,8,5,8,5,3,0]
+# 1, Sort 
+# 2, Remove the duplicate value
+
+# [2,5,3,2,6,7,4] [2,5,8,4,2,5]
+# remove the dupication and merge it and return the list
+
+# [4,3,2,5,7,4,2,7] , target=9 -> [index1,index2] [0,3]
+
+
+str1 = "A n i sh001,!386"
+
+for i in str1:
+    if i.isalpha():
+        print(i,end="")
