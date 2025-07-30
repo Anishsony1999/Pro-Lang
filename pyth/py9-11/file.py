@@ -57,3 +57,14 @@ with open(path,'r') as file:
         users[user[0].strip()] = user[1].replace("\n","").strip()
 
 print(users)
+
+from datetime import date
+
+date = date.today()
+
+print(date)
+
+# files handling
+
+with open('text1.txt','w') as file:
+    file.write("new line will append")
