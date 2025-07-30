@@ -85,3 +85,47 @@ list5 = list2+list4
 
 list2 += list4
 
+print(list2)
+
+# list methods
+
+list2.insert(1,"insert data")
+
+print(list2)
+
+list2.append('adding data from the end')
+print(list2)
+
+x = list2.pop(1) # Remove and return item at index (default last).
+print(x)
+print(list2)
+
+list2.remove(5)
+print(list2)
+
+num = [7,5,3,7,2,8,2,9,1,0,1]
+# num.sort()
+# print(num)
+
+# num.reverse()
+# print(num)
+
+num.sort(reverse=True)
+print(num)
+
+num.extend([20,30,40])
+print(num)
+
+print(num.count(7))
+
+num = [20,20,10,20]
+
+num1 = num.copy() # way1
+num1 = list(num) # way2
+num1[0] =50
+
+print(num) 
+print(num1)
+
+num.clear()
+print(num)
