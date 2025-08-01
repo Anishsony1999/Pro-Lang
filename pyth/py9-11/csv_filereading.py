@@ -1,4 +1,8 @@
 import csv
+import re
+
+for i in dir(re):
+    print(i)
 
 path = "C:/Users/HP/OneDrive/Desktop/Lang/pyth/py9-11/name.csv"
 
