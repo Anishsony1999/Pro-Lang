@@ -68,3 +68,6 @@ print(date)
 
 with open('text1.txt','w') as file:
     file.write("new line will append")
+    
+
+
