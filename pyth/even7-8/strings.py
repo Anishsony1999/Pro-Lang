@@ -5,18 +5,18 @@
 # Strings are indexed.
 # indexing starts from 0.
 
-x ="Hello World!" 
-y = str("Anish!") 
+x = 'Hello World!'
+y = str("Anish!")
 
 
 print(len(y)) # 6
 print(x[4]) # o
-print(y[-4]) # i
+print(y[-1]) # y[len(y)-1]
 
 #slicing
 
 print(x[2 : 5]) # llo
-print(x[2 : 10 ]) # llo World
+print(x[2 : 10 ]) # llo Worl
 print(x[4:4]) #
 print(x[ 3 : ]) # lo World!
 print(x[ :9]) # Hello Wor
