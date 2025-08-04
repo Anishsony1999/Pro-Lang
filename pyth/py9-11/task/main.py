@@ -1,4 +1,5 @@
 from ab import Bank,User
+import sql
 
 
 users = [
@@ -9,10 +10,12 @@ users = [
 
 bank = Bank()
 
-password = "12345"
+# password = "12345"
 
-user = bank.check_password(users,password)
-bank.withdrow(user,10)
-print(bank.deposite(user,20))
+# user = bank.check_password(users,password)
+# bank.withdrow(user,10)
+# print(bank.deposite(user,20))
 
 
+for user in users:
+    sql.insert_data(user)
