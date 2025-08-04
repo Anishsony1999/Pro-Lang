@@ -6,6 +6,7 @@ users = [
     User("Anisha","anishsony1999","123"),
     User("Anu","anussharv@gmail","123"),
     User("Anish","anishamony@gmail.com","12345")
+    
 ]
 
 bank = Bank()
