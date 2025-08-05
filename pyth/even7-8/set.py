@@ -56,3 +56,4 @@ str1 = "A n i sh001,!386"
 for i in str1:
     if i.isalpha():
         print(i,end="")
+
