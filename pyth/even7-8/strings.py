@@ -40,7 +40,7 @@ print(x.upper()) #    HELLO ASHLIYA
 print(x.lower()) #     hello ashliya
 print(x.replace("Ashliya", "Anish")) #     Hello Anish
 
-list1 = x.split()
+list1 = x.split('l')
 
 print(list1) # ['   He', '', 'o Ash', 'iya   ']
 
@@ -52,7 +52,7 @@ print(x.endswith("Ashliya")) # Flase
 
 # 1, Hello World! -> !dlroW olleH
 # 2, Hello Ashliya M Riyaz! -> olleH ayilhsA M !zayiR
-# malayalam, dad / a man, a plan, a canal: panama!
+# 3, Malayalam, dad ,{ a man, a plan, a canal: panama!}
 
 # list Data Type
 # ==============
