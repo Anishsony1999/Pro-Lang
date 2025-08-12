@@ -104,3 +104,22 @@ print(nums)
 
 nums = list(map(lambda x : x**2,nums))
 print(nums)
+
+
+point = 10
+
+def add_point():
+
+    global point
+    point += 2
+
+def get_point():
+    print(f"point{point}")
+
+
+
+get_point()
+add_point()
+get_point()
+
+print( 2 + 4 )

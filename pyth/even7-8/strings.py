@@ -129,3 +129,21 @@ print(num1)
 
 num.clear()
 print(num)
+
+
+fname="anish"
+num = 9442016203
+email = "anishsony@gmail.com"
+website="anishsony1999.github.io/portfolio"
+
+# out ="My name is "+fname+" my Number is "+ str(num)+" You Can mail me at "+email+" My site "+website
+out = "My name is {} my Number is {} You Can mail me at {} My site {}".format(fname,num,email,website)
+out = "My name is {0} my Number is {1} You Can mail me at {2} My site {3}".format(fname,num,email,website)
+out = "My name is {name} my Number is {num} You Can mail me at {mail} My site {web}".format(
+    name=fname,num=num,mail=email,web=website)
+out = "My name is %s my Number is %d You Can mail me at %s My site %s"%(fname,num,email,website)
+
+out = f"My name is {fname} my Number is {num} You Can mail me at {email} My site {website}"
+
+print(type(out))
+print(out)

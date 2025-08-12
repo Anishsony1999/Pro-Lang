@@ -17,7 +17,7 @@
 # place - memory 
 # plan  - blueprint - class
 # goods - variables - attributes
-# workers - constructors 
+# workers - constructor
 
 # class - blueprint
 # class is the blueprint of the object.

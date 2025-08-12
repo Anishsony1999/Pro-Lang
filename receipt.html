@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt Book</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            padding: 2rem;
+        }
+
+        .receipt-container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .receipt {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            padding: 2rem;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        .receipt-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .receipt-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #1f2937;
+        }
+
+        .receipt-number {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #4b5563;
+        }
+
+        .receipt-line {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+        
+        .receipt-label {
+            font-weight: bold;
+            color: #4b5563;
+            margin-right: 0.5rem;
+        }
+        
+        .receipt-input {
+            border-bottom: 1px solid #9ca3af;
+            flex-grow: 1;
+            padding: 0 0.25rem;
+        }
+
+        .receipt-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .receipt-table th, .receipt-table td {
+            border: 1px solid #e5e7eb;
+            padding: 0.5rem 0.75rem;
+            text-align: left;
+        }
+
+        .receipt-table th {
+            background-color: #1f2937;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .receipt-total-row {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        .receipt-total-label {
+            margin-right: 0.5rem;
+        }
+        
+        .receipt-total-input {
+            border-bottom: 1px solid #9ca3af;
+            width: 100px;
+            padding: 0 0.25rem;
+        }
+
+        .signature-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .signature-item {
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+            margin-bottom: 1rem;
+        }
+
+        .signature-line {
+            border-bottom: 1px solid #9ca3af;
+            margin-top: 1.5rem;
+        }
+        
+        .signature-label {
+            text-align: left;
+            margin-top: 0.5rem;
+        }
+
+        .print-button {
+            display: block;
+            margin: 2rem auto;
+            padding: 0.75rem 1.5rem;
+            background-color: #4f46e5;
+            color: white;
+            font-weight: bold;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .print-button:hover {
+            background-color: #4338ca;
+        }
+
+        @media print {
+            body {
+                background-color: #ffffff;
+                padding: 0;
+            }
+            .receipt {
+                box-shadow: none;
+                border: 1px solid #000;
+                border-radius: 0;
+                margin: 0;
+            }
+            .receipt-container, .print-button-container {
+                display: none;
+            }
+
+
+@media print {
+    .print-button-container {
+        display: none;
+    }
+    body {
+        background-color: white;
+        margin: 0;
+        padding: 0;
+    }
+    @page {
+        size: A4;
+        margin: 0;
+    }
+}
+
+        }
+    </style>
+
+</head>
+<body class="bg-gray-100">
+
+    <div class="flex justify-center my-8 print-button-container">
+        <button onclick="downloadPDF()" class="print-button">Download PDF</button>
+    </div>
+    
+    <!-- The main container where all receipts will be appended -->
+    <div id="receipts-container" class="receipt-container"></div>
+
+    <script>
+        // Function to create a single receipt element
+        function createReceipt(serialNumber) {
+            const receipt = document.createElement('div');
+            receipt.className = 'receipt';
+            
+            // Format the serial number with leading zeros
+            const slNo = String(serialNumber).padStart(4, '0');
+
+            // Set the inner HTML of the receipt
+            receipt.innerHTML = `
+                <div class="receipt-page">
+                    <!-- Header Section -->
+                    <div class="receipt-header">
+                        <div class="receipt-title">SCOPE INDIA & SUFFIX E SOLUTIONS PVT LTD</div>
+                        <div class="receipt-number">SL NO: ${slNo}</div>
+                    </div>
+                    
+                    <!-- Top Info Section -->
+                    <div class="receipt-line">
+                        <span class="receipt-label">Pay To:</span>
+                        <div class="receipt-input flex-1"></div>
+                        <span class="receipt-label ml-4">Pay By:</span>
+                        <div class="receipt-input flex-1"></div>
+                    </div>
+                    <div class="receipt-line">
+                        <span class="receipt-label">Date:</span>
+                        <div class="receipt-input flex-1"></div>
+                        <span class="receipt-label ml-4">Branch:</span>
+                        <div class="receipt-input flex-1"></div>
+                    </div>
+                    
+                    <!-- Table Section -->
+                    <table class="receipt-table">
+                        <thead>
+                            <tr>
+                                <th class="w-1/12">S.No</th>
+                                <th class="w-3/12">Payment Method</th>
+                                <th class="w-2/12">Unit Price</th>
+                                <th class="w-4/12">Description</th>
+                                <th class="w-2/12">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- The table rows are generated dynamically -->
+                            <tr><td>1</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>2</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>3</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>4</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>5</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>6</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>7</td><td></td><td></td><td></td><td></td></tr>
+                        </tbody>
+                    </table>
+                    
+                    <!-- Total Row -->
+                    <div class="receipt-total-row">
+                        <span class="receipt-total-label">Total</span>
+                        <div class="receipt-total-input"></div>
+                    </div>
+                    
+                    <!-- Footer Info Section -->
+                    <div class="receipt-line mt-4">
+                        <span class="receipt-label">A/C No.:</span>
+                        <div class="receipt-input flex-1"></div>
+                        <span class="receipt-label ml-4">The Sum of:</span>
+                        <div class="receipt-input flex-2"></div>
+                    </div>
+
+                    <!-- Signature Section -->
+                    <div class="signature-section">
+                        <div class="signature-item">
+                            <div class="signature-line"></div>
+                            <div class="signature-label">Prepared By:</div>
+                        </div>
+                        <div class="signature-item">
+                            <div class="signature-line"></div>
+                            <div class="signature-label">Received By:</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            return receipt;
+        }
+
+        // Get the container element
+        const receiptsContainer = document.getElementById('receipts-container');
+
+        // Loop to generate 500 receipts
+        for (let i = 300; i <= 500; i++) {
+            receiptsContainer.appendChild(createReceipt(i));
+        }
+
+        async function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+        const receipts = document.querySelectorAll('.receipt');
+        const pdf = new jsPDF({ unit: 'in', format: 'a4', orientation: 'portrait' });
+
+        for (let i = 0; i < receipts.length; i++) {
+            const element = receipts[i];
+
+            // Use html2canvas to render the receipt
+            const canvas = await html2canvas(element, { scale: 2 });
+            const imgData = canvas.toDataURL('image/jpeg', 1.0);
+
+            const imgProps = pdf.getImageProperties(imgData);
+            const pdfWidth = pdf.internal.pageSize.getWidth();
+            const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+            if (i !== 0) {
+                pdf.addPage();
+            }
+
+            pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight);
+        }
+
+        pdf.save('receipts.pdf');
+    }
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+
+</body>
+</html>
