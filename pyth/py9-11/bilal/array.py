@@ -5,5 +5,6 @@ for i in range(len(value)):
             
            
             print([i,j])
-# array
+# array for searching
+
             
