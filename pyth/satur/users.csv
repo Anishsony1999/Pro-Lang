@@ -1,4 +1,4 @@
-name,age,city,salary
-Anish,24,TVM,25000
-sangeetha,25,TVM,100000
-bindhu,25,TVM,120000
+Name,Gender,Product,Amount,Quantity
+Anish,male,tshirt,200,2
+Sangeetha,female,tshirt,500,5
+Bindu,female,shirt,500,3
