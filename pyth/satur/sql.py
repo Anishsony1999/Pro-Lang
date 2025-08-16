@@ -36,7 +36,7 @@ try :
 
     print(data1)
     
-    # query = f"select * from {table}"
+    query = f"select * from {table}"
 
     df = pd.read_sql(query,conn)
     
