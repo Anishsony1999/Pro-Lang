@@ -25,8 +25,8 @@ try :
     cursor  = conn.cursor()
     df['total'] = df['Amount']* df['Quantity']
 
-    # for j,i in df.iterrows():
-    #     cursor.execute("insert into products (name,gender,product,amount,quntity,total) value(%s,%s,%s,%s,%s,%s)",(i['Name'],i['Gender'],i['Product'],int(i['Amount']),int(i['Quantity']),int(i['total'])))
+    for j,i in df.iterrows():
+        cursor.execute("insert into products (name,gender,product,amount,quntity,total) value(%s,%s,%s,%s,%s,%s)",(i['Name'],i['Gender'],i['Product'],int(i['Amount']),int(i['Quantity']),int(i['total'])))
 
     conn.commit()
 
@@ -38,9 +38,9 @@ try :
     
     # query = f"select * from {table}"
 
-    # df = pd.read_sql(query,conn)
+    df = pd.read_sql(query,conn)
     
-    # df.to_csv(out,index=False)
+    df.to_csv(out,index=False)
 
 except mysql.connector.Error as e:
     print(e)
