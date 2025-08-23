@@ -23,7 +23,7 @@ try :
     conn = mysql.connector.connect(**bd_config)
 
     cursor  = conn.cursor()
-    df['total'] = df['Amount']* df['Quantity']
+    df['total'] = df['Amount'] * df['Quantity']
 
     for j,i in df.iterrows():
         cursor.execute("insert into products (name,gender,product,amount,quntity,total) value(%s,%s,%s,%s,%s,%s)",(i['Name'],i['Gender'],i['Product'],int(i['Amount']),int(i['Quantity']),int(i['total'])))
