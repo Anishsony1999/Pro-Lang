@@ -67,3 +67,26 @@ class StudentImp(Student):
 student = StudentImp()
 print(student.adding(3,3))
 
+
+
+class __Bank:
+
+    def __init__(self,name,email):
+        self.name = name
+        self._email = email
+        self.__balance = 0
+
+    def depo(self,amout):
+        self.__balance += amout
+    
+    def withdrow(self,amout):
+        self.__balance -= amout
+    
+    def balance(self):
+        return self.__balance
+
+user1 = __Bank("Anish","anishsony@gmail.com")
+
+user1.depo(200)
+user1.withdrow(100)
+print(user1.balance())
