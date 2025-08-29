@@ -62,3 +62,7 @@ str3  = "A man, a plan, a canal, Panama"
 list1 = str3.split(" ")
 
 print(list1)
+
+
+for i in "Anish":
+    print(i)
