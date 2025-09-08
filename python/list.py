@@ -15,7 +15,7 @@ print(names[2])
 
 print(names[0:2])
 print(names[ 1 : : 2])
-print(names[ : :-1])
+print("negathive : ", names[ : :-1])
 
 for name in names:
     print(name)
