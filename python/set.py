@@ -20,3 +20,10 @@ print(list1)
 
 # 876 -> 678
 # -12 -> -21
+
+
+list1 = [False,1,0,True]
+
+set1 = set(list1)
+
+print(set1)
